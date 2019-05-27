@@ -36,9 +36,9 @@ CREATE TABLE Contracts (
     Vacation_days INTEGER,
     PRIMARY KEY (Contract_id),
     FOREIGN KEY (Employee_id)
-        REFERENCES Employees (Employee_id),
+       REFERENCES Employees (Employee_id),
     FOREIGN KEY (Position_id)
-        REFERENCES Positions (Position_id)
+       REFERENCES Positions (Position_id)
 );
 
 CREATE TABLE Payment_Frequency (
@@ -56,9 +56,9 @@ CREATE TABLE Payment (
     Payment_frequency_id INTEGER,
     PRIMARY KEY (Payment_id),
     FOREIGN KEY (Contract_id)
-        REFERENCES Contracts (Contract_id),
+       REFERENCES Contracts (Contract_id),
     FOREIGN KEY (Payment_frequency_id)
-        REFERENCES Payment_Frequency (Payment_frequency_id)
+       REFERENCES Payment_Frequency (Payment_frequency_id)
 );
 
 CREATE TABLE Payment_Deduction (
@@ -66,14 +66,14 @@ CREATE TABLE Payment_Deduction (
     Tax_amount REAL,
     Superannuation_fund BOOLEAN,
     FOREIGN KEY (Payment_id)
-        REFERENCES Payment (Payment_id)
+       REFERENCES Payment (Payment_id)
 );
 
 CREATE TABLE Payment_Bonus (
     Payment_id INTEGER,
     Bonus_amount REAL,
     FOREIGN KEY (Payment_id)
-        REFERENCES Payment (Payment_id)
+       REFERENCES Payment (Payment_id)
 );
 
 
