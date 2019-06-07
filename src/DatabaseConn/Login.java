@@ -139,11 +139,11 @@ public class Login extends Application {
     private void setConnection() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			dbConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/login","root","nihon123");
+			dbConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/knkproject?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","");
 			
 		} catch (Exception ex) {
 			Alert alert = new Alert(AlertType.ERROR);
-			alert.setTitle("Database problem");
+			alert.setTitle("Database problem1");
 			alert.setHeaderText(null);
 			alert.setContentText("Can not connect to database");
 			alert.showAndWait();
@@ -184,7 +184,7 @@ public class Login extends Application {
 			
 		} catch(SQLException ex) {
 			Alert alert = new Alert(AlertType.ERROR);
-			alert.setTitle("Database problem");
+			alert.setTitle("Database problem2");
 			alert.setHeaderText(null);
 			alert.setContentText(ex.getMessage());
 			alert.showAndWait();
