@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -20,9 +21,12 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.effect.Reflection;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -52,13 +56,16 @@ public class Login extends Application {
     	//kta e kom kriju edhe e kom perdor te loginUser pasi qe login osht me sukses 
     	 mainStage = primaryStage;
     	 setConnection();
+         emailTxt.setPromptText("Email");
+         passwordTxt.setPromptText("Password");
          
+   
         BorderPane bp = new BorderPane();
         bp.setPadding(new Insets(10,50,50,50));
          
        
         HBox hb = new HBox();
-        hb.setPadding(new Insets(20,20,20,30));
+        hb.setPadding(new Insets(20,20,2,30));
          
        
         GridPane gridPane = new GridPane();
@@ -66,14 +73,31 @@ public class Login extends Application {
         gridPane.setHgap(5);
         gridPane.setVgap(5);
       
+        Image usernameIcon = new Image("file:Images/icon.png");
+        ImageView usernameIconIV = new ImageView(usernameIcon);
+        usernameIconIV.setFitWidth(20);
+        usernameIconIV.setFitHeight(20);
 
-        Label lblUserName = new Label("Username");
-        Label lblPassword = new Label("Password");
+        Image usernameIcon2 = new Image("file:Images/icon3.png");
+        ImageView usernameIconIV2 = new ImageView(usernameIcon2);
+        usernameIconIV2.setFitWidth(20);
+        usernameIconIV2.setFitHeight(20);
+ 
+        HBox hb2=new HBox();
+        hb2.setPadding(new Insets(5,20,0,5));
         Button btnLogin = new Button("Login");
-         btnLogin.setTextFill(Color.WHITE);
+         btnLogin.setTextFill(Color.rgb(186, 201, 209));
         btnLogin.setStyle("-fx-background-radius: 30, 30, 29, 28;\r\n" + 
         		"    -fx-padding: 3px 10px 3px 10px;\r\n" + 
-        		"    -fx-background-color: linear-gradient(CORNFLOWERBLUE , lightblue);");
+        		"    -fx-background-color: #2C3E48");
+        Button btnRegister = new Button("Register");
+        btnRegister.setTextFill(Color.rgb(186, 201, 209));
+       btnRegister.setStyle("-fx-background-radius: 30, 30, 29, 28;\r\n" + 
+       		"    -fx-padding: 3px 10px 3px 10px;\r\n" + 
+       		"    -fx-background-color: #2C3E48");
+       
+       hb2.getChildren().addAll(btnLogin,btnRegister);
+       hb2.setSpacing(5);
         
         
         //lidhja e butonit me metoden LoginUser
@@ -87,45 +111,38 @@ public class Login extends Application {
             }
         }); btnLogin.requestFocus();
         
-        gridPane.add(lblUserName, 0, 0);
+        gridPane.add(usernameIconIV, 0, 0);
         gridPane.add(emailTxt, 1, 0);
-        gridPane.add(lblPassword, 0, 1);
+        gridPane.add(usernameIconIV2, 0, 1);
         gridPane.add(passwordTxt, 1, 1);
-        gridPane.add(btnLogin, 2, 1);
-         
-                 
-        // Reflection i gripane
-        Reflection r = new Reflection();
-        r.setFraction(0.7f);
-        gridPane.setEffect(r);
-        gridPane.setStyle("-fx-background-color:  linear-gradient(lightblue, CORNFLOWERBLUE);\r\n" + 
-        		" -fx-border-color: white;\r\n" + 
-        		" -fx-border-radius: 20;\r\n" + 
-        		" -fx-padding: 10 10 10 10;\r\n" + 
+        gridPane.add(hb2, 1, 2);
+        
+        
+          
+        gridPane.setStyle("-fx-background-color: #53788D  ;\r\n" + 
+        		" -fx-padding: 20 10 10 10;\r\n" + 
         		" -fx-background-radius: 20;");
         
-        
-        //Efekti Drop Shadow per tekst
-        DropShadow dropShadow = new DropShadow();
-        dropShadow.setOffsetX(2);
-        dropShadow.setOffsetY(2);
-        dropShadow.setColor(Color.CADETBLUE);
          
         
-        Text text = new Text("Login here");
+        Text text = new Text("Login");
         text.setTextAlignment(TextAlignment.CENTER);
-        text.setFont(Font.font("Courier New", FontWeight.BOLD, 28));
-        text.setEffect(dropShadow);
-         text.setStyle("-fx-fill:  linear-gradient(CORNFLOWERBLUE , lightblue);");
-      
+     
+        text.setStyle("-fx-font-family: Pacifico;-fx-font-size:30");
+        text.setFill(Color.rgb(196, 206, 212));
+  
+        
         hb.getChildren().add(text);
-    
-       
+   
+        hb.setAlignment(Pos.CENTER);
+        
+       bp.setStyle("-fx-background-color:#2B4857");
         bp.setTop(hb);
         bp.setCenter(gridPane);  
          
         
      Scene scene = new Scene(bp);
+     scene.getStylesheets().add("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
     
      primaryStage.setScene(scene);
        primaryStage.setTitle("Login");
