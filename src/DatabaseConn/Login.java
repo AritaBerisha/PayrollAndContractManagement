@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -59,25 +60,25 @@ public class Login extends Application {
          emailTxt.setPromptText("Email");
          passwordTxt.setPromptText("Password");
          
+ 
+         BorderPane bp = new BorderPane();
+         bp.setPadding(new Insets(10,50,50,50));
+         
+       
+         HBox hb = new HBox();
+         hb.setPadding(new Insets(20,20,2,30));
+         
+       
+         GridPane gridPane = new GridPane();
+         gridPane.setPadding(new Insets(20,20,20,20));
+         gridPane.setHgap(5);
+         gridPane.setVgap(5);
    
-        BorderPane bp = new BorderPane();
-        bp.setPadding(new Insets(10,50,50,50));
-         
-       
-        HBox hb = new HBox();
-        hb.setPadding(new Insets(20,20,2,30));
-         
-       
-        GridPane gridPane = new GridPane();
-        gridPane.setPadding(new Insets(20,20,20,20));
-        gridPane.setHgap(5);
-        gridPane.setVgap(5);
-      
         Image usernameIcon = new Image("file:Images/icon.png");
         ImageView usernameIconIV = new ImageView(usernameIcon);
         usernameIconIV.setFitWidth(20);
         usernameIconIV.setFitHeight(20);
-
+  
         Image usernameIcon2 = new Image("file:Images/icon3.png");
         ImageView usernameIconIV2 = new ImageView(usernameIcon2);
         usernameIconIV2.setFitWidth(20);
@@ -96,6 +97,7 @@ public class Login extends Application {
        		"    -fx-padding: 3px 10px 3px 10px;\r\n" + 
        		"    -fx-background-color: #2C3E48");
        
+       
        hb2.getChildren().addAll(btnLogin,btnRegister);
        hb2.setSpacing(5);
         
@@ -110,6 +112,8 @@ public class Login extends Application {
             	
             }
         }); btnLogin.requestFocus();
+        
+        
         
         gridPane.add(usernameIconIV, 0, 0);
         gridPane.add(emailTxt, 1, 0);
@@ -136,21 +140,114 @@ public class Login extends Application {
    
         hb.setAlignment(Pos.CENTER);
         
-       bp.setStyle("-fx-background-color:#2B4857");
+       bp.setStyle("-fx-background-color:#2B4857;");
         bp.setTop(hb);
         bp.setCenter(gridPane);  
-         
+        
+        
+        
         
      Scene scene = new Scene(bp);
+   
      scene.getStylesheets().add("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
+ 
+     
+     
+     
+     
+     /////////////////////////SIGN UP/////////////////
     
+    
+        
+     Text textSignUp = new Text("Sign Up");
+     textSignUp.setTextAlignment(TextAlignment.CENTER);
+  
+     textSignUp.setStyle("-fx-font-family: Pacifico;-fx-font-size:30");
+     textSignUp.setFill(Color.rgb(196, 206, 212));
+     
+     Button btnSignUp = new Button("Sign Up");
+     btnSignUp.setTextFill(Color.rgb(186, 201, 209));
+    btnSignUp.setStyle("-fx-background-radius: 30, 30, 29, 28;\r\n" + 
+    		"    -fx-padding: 3px 10px 3px 10px;\r\n" + 
+    		"    -fx-background-color: #2C3E48");
+    
+//    Button btnLogIn = new Button(" Login ");
+//    btnLogIn.setTextFill(Color.rgb(186, 201, 209));
+//   btnLogIn.setStyle("-fx-background-radius: 30, 30, 29, 28;\r\n" + 
+//   		"    -fx-padding: 3px 10px 3px 10px;\r\n" + 
+//   		"    -fx-background-color: #2C3E48");
+    
+     HBox hbSignUp = new HBox();
+     
+     hbSignUp.getChildren().add(textSignUp);
+     hbSignUp.setPadding(new Insets(20,20,2,30));
+     hbSignUp.setAlignment(Pos.CENTER);
+     
+     BorderPane bpSignUp = new BorderPane();
+     bpSignUp.setPadding(new Insets(10,50,50,50));
+     
+     GridPane gridPaneSU = new GridPane();
+     gridPaneSU.setPadding(new Insets(20,20,20,20));
+     gridPaneSU.setHgap(5);
+     gridPaneSU.setVgap(5);
+     
+     HBox hbSignUp2= new HBox();
+     hbSignUp2.setPadding(new Insets(5,30,10,5));
+     hbSignUp2.getChildren().addAll(btnSignUp);
+     hbSignUp2.setSpacing(5);
+     
+
+//     gridPaneSU.add(usernameIconIV, 0, 0);
+//     gridPaneSU.add(emailTxt, 1, 0);
+//     gridPaneSU.add(usernameIconIV2, 0, 1);
+//     gridPaneSU.add(passwordTxt, 1, 1);
+//     gridPaneSU.add(hbSignUp2, 1, 2);
+     
+     gridPaneSU.setStyle("-fx-background-color: #53788D  ;\r\n" + 
+     		" -fx-padding: 20 10 10 10;\r\n" + 
+     		" -fx-background-radius: 20;");
+     
+     bpSignUp.setStyle("-fx-background-color:#2B4857;");
+     bpSignUp.setTop(hbSignUp);
+     bpSignUp.setCenter(gridPaneSU);
+     
+     Scene scene2 = new Scene(bpSignUp);
+     
+     btnSignUp.setOnAction(e->SignUpUser());
+     
+     scene2.getStylesheets().add("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
+     btnRegister.setOnMouseClicked(e->{
+    	 gridPaneSU.add(usernameIconIV, 0, 0);
+         gridPaneSU.add(emailTxt, 1, 0);
+         gridPaneSU.add(usernameIconIV2, 0, 1);
+         gridPaneSU.add(passwordTxt, 1, 1);
+         gridPaneSU.add(hbSignUp2, 1, 2);
+    	 primaryStage.setScene(scene2);
+    	 primaryStage.setTitle("Sign up");
+         primaryStage.setResizable(false);
+     });
+     
+   
+     
+     //////////////////////////////////////////////////////////////////////
+     
+     
+     
      primaryStage.setScene(scene);
        primaryStage.setTitle("Login");
      primaryStage.setResizable(false);
     
      primaryStage.show();
     gridPane.requestFocus();
+    
     }
+    
+    
+    
+    
+    ///////////DataBase///////////////////////////////////////////////
+    
+    
     
     
     private void setConnection() {
@@ -208,6 +305,38 @@ public class Login extends Application {
 			System.exit(0);
 		}
 	}
+    private void SignUpUser() {
+    	
+    	String query1 = "Insert into users values ('"+emailTxt.getText()+"','"+passwordTxt.getText()+"')";
+        try {
+			
+		
+			Statement statement = dbConnection.createStatement();
+			statement.executeUpdate(query1);
+		
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("Sign Up");
+			alert.setHeaderText(null);
+			alert.setContentText("Sign Up was sucessful!");
+			alert.showAndWait();
+			
+			mainStage.hide();
+			MainProgram.createMainStage();
+				
+			}
+			
+		 catch(SQLException ex) {
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Database problem2");
+			alert.setHeaderText(null);
+			alert.setContentText(ex.getMessage());
+			alert.showAndWait();
+			System.exit(0);
+		}
+	}
+    	
+    	
+    
 }
 
 
