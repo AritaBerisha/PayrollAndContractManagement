@@ -58,10 +58,7 @@ public class Menus extends Application {
 	  Menu helpMenu = new Menu("Help");
 	  helpMenu.getItems().add(new MenuItem("Welcome"));
 	  helpMenu.getItems().add(new MenuItem("Help Content"));
-	  helpMenu.getItems().add(new MenuItem("Show Contextual Help"));
-	  helpMenu.getItems().add(new MenuItem("Tip of the day"));
-	  helpMenu.getItems().add(new MenuItem("Tips and Tricks"));
-	  helpMenu.getItems().add(new MenuItem("Contribute"));
+	  
 	  
 	  //Main menu bar
 	  MenuBar menuBar = new MenuBar();
@@ -69,6 +66,7 @@ public class Menus extends Application {
 	  
 	  layout = new BorderPane();
 	  layout.setTop(menuBar);
+	  layout.setStyle("-fx-background-color:#b2aca9;");
 	 
 	  
 	  Scene scene = new Scene(layout, 600, 400);
