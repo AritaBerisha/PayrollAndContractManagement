@@ -81,6 +81,12 @@ public class Menus extends Application {
 		pane.setVgap(5);
 		Label label = new Label();
 		
+		label.setText("Employee Details");
+
+		label.setStyle("-fx-background-color:lightblue; -fx-font-size:15px;");
+		pane.getChildren().add(label);
+
+		
 	 
 	  HBox hbox = new HBox();
           Button btn = new Button("Add New Employee");
