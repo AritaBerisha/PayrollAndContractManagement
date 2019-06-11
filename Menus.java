@@ -119,6 +119,10 @@ public class Menus extends Application {
 		pane.add(new Label("Job Title:"), 2, 6);
 		pane.add(new TextField(), 3, 6);
 		
+		Button btAdd = new Button("Add Record");
+		btAdd.setStyle("-fx-font: 15 arial; -fx-base:lightblue");
+		pane.add(btAdd, 2, 7);
+		GridPane.setHalignment(btAdd, HPos.RIGHT);
 		
 	 
 	  HBox hbox = new HBox();
