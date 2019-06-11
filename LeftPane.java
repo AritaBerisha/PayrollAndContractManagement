@@ -9,12 +9,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class LeftPane extends VBox{
-	Label  labelTitle = new Label("Add New Employee");
+	Label  labelTitle = new Label("Employee");
 	
-	TextField txtName = new TextField();
-	TextField txtAge = new TextField();
-	TextField txtYear = new TextField();
+	TextField txtID = new TextField();
+	TextField txtDepartament = new TextField();
+	TextField txtTitle = new TextField();
 	TextField txtSalary = new TextField();
+	
 	
 	Button btnSave = new Button("Save");
 	Button btnUpdate = new Button("Update");
