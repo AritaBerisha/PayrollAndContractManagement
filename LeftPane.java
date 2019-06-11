@@ -28,10 +28,10 @@ public class LeftPane extends VBox{
 		txtTitle.setFont(new Font(20));
 		txtSalary.setFont(new Font(20));
 	
-		txtName.setPromptText("Enter Name");
-		txtAge.setPromptText("Enter Age");
-		txtYear.setPromptText("Enter Year");
-		txtSalary.setPromptText("Enter Job Salary:");
+		txtID.setPromptText("Enter Employee ID:");
+		txtDepartament.setPromptText("Enter Departament");
+		txtTitle.setPromptText("Enter Job Title:");
+		txtSalary.setPromptText("Enter Salary:");
 		
 		
 		btnSave.setPrefWidth(160);
