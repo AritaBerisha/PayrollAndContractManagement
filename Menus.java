@@ -86,6 +86,16 @@ public class Menus extends Application {
 		label.setStyle("-fx-background-color:lightblue; -fx-font-size:15px;");
 		pane.getChildren().add(label);
 
+		pane.add(new Label("Employee ID:"), 0, 1);
+		pane.add(new TextField(), 1, 1);
+		pane.add(new Label("First Name:"), 0, 2);
+		pane.add(new TextField(), 1, 2);
+		pane.add(new Label("Surname:"), 0, 3);
+		pane.add(new TextField(), 1, 3);
+		pane.add(new Label("Date Of Birth:"), 0, 4);
+		pane.add(new TextField(), 1, 4);
+		pane.add(new Label("Email"), 0, 5);
+		pane.add(new TextField(), 1, 5);
 		
 	 
 	  HBox hbox = new HBox();
