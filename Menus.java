@@ -20,10 +20,10 @@ public class Menus extends Application {
 	  window.setTitle("Payroll And Contract Management");
 	  
 	  //File menu 
-	  Menu fileMenu = new Menu("File");
-	  fileMenu.getItems().add(new MenuItem("New..."));
-	  fileMenu.getItems().add(new MenuItem("Open..."));
-	  fileMenu.getItems().add(new MenuItem("Save..."));
+	  Menu fileMenu = new Menu("_File");
+	  fileMenu.getItems().add(new MenuItem("New"));
+	  fileMenu.getItems().add(new MenuItem("Open"));
+	  fileMenu.getItems().add(new MenuItem("Save"));
 	  fileMenu.getItems().add(new SeparatorMenuItem());
 	  fileMenu.getItems().add(new MenuItem("Exit..."));
 	  
@@ -34,14 +34,14 @@ public class Menus extends Application {
 	  editMenu.getItems().add(new MenuItem("Paste"));
 	  
 	  //Search menu
-	  Menu search = new Menu("Search");
+	  Menu search = new Menu("_Search");
 	  
 	  //Add menu
-	  Menu AddMenu = new Menu("Add");
+	  Menu AddMenu = new Menu("_Add");
 	 
 	 
 	  //Language menu
-	  Menu LangMenu = new Menu("Language");
+	  Menu LangMenu = new Menu("_Language");
 	  ToggleGroup LangToggle = new ToggleGroup();
 	  
 	  RadioMenuItem English = new RadioMenuItem("English");
@@ -53,7 +53,7 @@ public class Menus extends Application {
 	  LangMenu.getItems().addAll(English, Albanian);
 	  
 	  //Help menu
-	  Menu helpMenu = new Menu("Help");
+	  Menu helpMenu = new Menu("_Help");
 	  helpMenu.getItems().add(new MenuItem("Welcome"));
 	  helpMenu.getItems().add(new MenuItem("Help Content"));
 	  
