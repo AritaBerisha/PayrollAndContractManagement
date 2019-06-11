@@ -48,7 +48,7 @@ public class LeftPane extends VBox{
 		this.setSpacing(20);
 		this.setPadding(new Insets(20));
 		this.setAlignment(Pos.CENTER);
-		this.getChildren().addAll(labelTitle,txtName,txtAge,txtYear,txtSalary,btnSave,btnUpdate,btnDelete);
+		this.getChildren().addAll(labelTitle,txtID,txtDepartament,txtTitle,txtSalary,btnSave,btnUpdate,btnDelete);
 		 
 	}
 
