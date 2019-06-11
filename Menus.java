@@ -106,6 +106,19 @@ public class Menus extends Application {
 		pane.add(new TextField(), 1, 9);
 		pane.add(new Label("Post Code"), 0, 10);
 		pane.add(new TextField(), 1, 10);
+		pane.add(new Label("Department:"), 2, 1);
+		pane.add(new TextField(), 3, 1);
+		pane.add(new Label("Designation:"), 2, 2);
+		pane.add(new TextField(), 3, 2);
+		pane.add(new Label("Status:"), 2, 3);
+		pane.add(new TextField(), 3, 3);
+		pane.add(new Label("Date Hired:"), 2, 4);
+		pane.add(new TextField(), 3, 4);
+		pane.add(new Label("Basic Salary:"), 2, 5);
+		pane.add(new TextField(), 3, 5);
+		pane.add(new Label("Job Title:"), 2, 6);
+		pane.add(new TextField(), 3, 6);
+		
 		
 	 
 	  HBox hbox = new HBox();
