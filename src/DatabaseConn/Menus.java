@@ -64,12 +64,7 @@ public class Menus extends MenuBar {
 		  editMenu.getItems().add(new MenuItem("Copy"));
 		  editMenu.getItems().add(new MenuItem("Paste"));
 		  
-		  //Search menu
-			//ALT+S e hap search menu
-		  Menu search = new Menu("_Search");
-		  
-		 
-		 
+		
 		  //Language menu
 		//ALT+L e hap language menu
 
