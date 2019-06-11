@@ -30,11 +30,26 @@ public class Menus extends Application {
 	  
 	  //File menu 
 	  Menu fileMenu = new Menu("_File");
-	  fileMenu.getItems().add(new MenuItem("New"));
-	  fileMenu.getItems().add(new MenuItem("Open"));
-	  fileMenu.getItems().add(new MenuItem("Save"));
+	  
+	 MenuItem mnN = new MenuItem("New");
+	  fileMenu.getItems().add(mnN);
+	  mnN.setAccelerator(new KeyCodeCombination(KeyCode.N,  KeyCombination.CONTROL_DOWN));
+	   
+		 
+	  MenuItem mnO = new MenuItem("Open");
+	  fileMenu.getItems().add(mnO); 
+	  mnO.setAccelerator(new KeyCodeCombination(KeyCode.O,  KeyCombination.CONTROL_DOWN));
+	  
+	  
+	  MenuItem mnS = new MenuItem("Save");
+	  fileMenu.getItems().add(mnS); 
+	  mnS.setAccelerator(new KeyCodeCombination(KeyCode.S,  KeyCombination.CONTROL_DOWN));
+	 
+	
 	  fileMenu.getItems().add(new SeparatorMenuItem());
-	  fileMenu.getItems().add(new MenuItem("Exit..."));
+	  MenuItem mnE = new MenuItem("Exit...");
+	  fileMenu.getItems().add(mnE); 
+	  mnE.setAccelerator(new KeyCodeCombination(KeyCode.X,  KeyCombination.CONTROL_DOWN));
 	  
 	  //Edit menu
 	  Menu editMenu = new Menu("_Edit");
