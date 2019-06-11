@@ -76,8 +76,9 @@ public class Menus extends Application {
 	  hbox.setSpacing(15);
 	  hbox.getChildren().addAll(btn,btn1);
 		
-		 layout = new BorderPane();
+	  layout = new BorderPane();
 	  layout.setTop(menuBar);
+	  layout.setBottom(hbox);
 	  layout.setStyle("-fx-background-color:#b2aca9;");
 		
 	  Scene scene = new Scene(layout, 600, 400);
