@@ -96,6 +96,16 @@ public class Menus extends Application {
 		pane.add(new TextField(), 1, 4);
 		pane.add(new Label("Email"), 0, 5);
 		pane.add(new TextField(), 1, 5);
+		pane.add(new Label("Contact"), 0, 6);
+		pane.add(new TextField(), 1, 6);
+		pane.add(new Label("Address Line 1:"), 0, 7);
+		pane.add(new TextField(), 1, 7);
+		pane.add(new Label("Address Line 2"), 0, 8);
+		pane.add(new TextField(), 1, 8);
+		pane.add(new Label("Apt./House No:"), 0, 9);
+		pane.add(new TextField(), 1, 9);
+		pane.add(new Label("Post Code"), 0, 10);
+		pane.add(new TextField(), 1, 10);
 		
 	 
 	  HBox hbox = new HBox();
