@@ -94,7 +94,7 @@ public class Login extends Application {
         gridPane.add(btnLogin, 2, 1);
          
                  
-        // Reflection i gripane
+        // Reflection i gridpanes
         Reflection r = new Reflection();
         r.setFraction(0.7f);
         gridPane.setEffect(r);
