@@ -62,9 +62,7 @@ public class Menus extends Application {
 	  MenuBar menuBar = new MenuBar();
 	  menuBar.getMenus().addAll(fileMenu, editMenu, search, AddMenu,LangMenu, helpMenu);
 	  
-	  layout = new BorderPane();
-	  layout.setTop(menuBar);
-	  layout.setStyle("-fx-background-color:#b2aca9;");
+	 
 	 
 	  HBox hbox = new HBox();
           Button btn = new Button("Add New Employee");
@@ -77,6 +75,10 @@ public class Menus extends Application {
 	  hbox.setPadding(new Insets(20,20,20,20));
 	  hbox.setSpacing(15);
 	  hbox.getChildren().addAll(btn,btn1);
+		
+		 layout = new BorderPane();
+	  layout.setTop(menuBar);
+	  layout.setStyle("-fx-background-color:#b2aca9;");
 		
 	  Scene scene = new Scene(layout, 600, 400);
 	  window.setScene(scene);
