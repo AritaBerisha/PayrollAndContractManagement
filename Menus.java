@@ -123,7 +123,10 @@ public class Menus extends Application {
 		btAdd.setStyle("-fx-font: 15 arial; -fx-base:lightblue");
 		pane.add(btAdd, 2, 7);
 		GridPane.setHalignment(btAdd, HPos.RIGHT);
-		
+		Button btAd1 = new Button("Clear");
+		btAd1.setStyle("-fx-font: 15 arial; -fx-base: lightblue");
+		pane.add(btAd1, 3, 7);
+		GridPane.setHalignment(btAdd, HPos.RIGHT);
 	 
 	  HBox hbox = new HBox();
           Button btn = new Button("Add New Employee");
