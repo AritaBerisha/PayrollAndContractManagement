@@ -79,7 +79,7 @@ public class Menus extends Application {
 	  layout = new BorderPane();
 	  layout.setTop(menuBar);
 	  layout.setBottom(hbox);
-	  layout.setStyle("-fx-background-color:#b2aca9;");
+	  layout.setStyle("-fx-background-image: url(DatabaseConn/images/bk2.jpg)");
 		
 	  Scene scene = new Scene(layout, 600, 400);
 	  window.setScene(scene);
