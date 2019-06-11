@@ -73,6 +73,11 @@ public class Menus extends Application {
 	  Button btn1 = new Button("Update Employee");
 	  btn1.setStyle("-fx-font: 20 arial; -fx-base:lightblue");
 		
+	  hbox.setAlignment(Pos.CENTER);
+	  hbox.setPadding(new Insets(20,20,20,20));
+	  hbox.setSpacing(15);
+	  hbox.getChildren().addAll(btn,btn1);
+		
 	  Scene scene = new Scene(layout, 600, 400);
 	  window.setScene(scene);
 	  window.show();
