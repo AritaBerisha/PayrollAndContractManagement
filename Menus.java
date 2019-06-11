@@ -140,6 +140,11 @@ public class Menus extends Application {
 	  hbox.setSpacing(15);
 	  hbox.getChildren().addAll(btn,btn1);
 		
+		 Button btn3 = new Button("<- Back");
+	  BorderPane bp = new BorderPane();
+	  bp.setCenter(pane);
+	  bp.setTop(btn3);
+		
 	  layout = new BorderPane();
 	  layout.setTop(menuBar);
 	  layout.setBottom(hbox);
