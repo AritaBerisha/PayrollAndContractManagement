@@ -46,6 +46,21 @@ public class Login extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+	
+	private void setConnection() {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			dbConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/login","root","nihon123");
+			
+		} catch (Exception ex) {
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Database problem");
+			alert.setHeaderText(null);
+			alert.setContentText("Can not connect to database");
+			alert.showAndWait();
+			System.exit(0);
+		}
+    }
       
     @Override
     public void start(Stage primaryStage) {
@@ -136,20 +151,7 @@ public class Login extends Application {
     }
     
     
-    private void setConnection() {
-		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			dbConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/login","root","nihon123");
-			
-		} catch (Exception ex) {
-			Alert alert = new Alert(AlertType.ERROR);
-			alert.setTitle("Database problem");
-			alert.setHeaderText(null);
-			alert.setContentText("Can not connect to database");
-			alert.showAndWait();
-			System.exit(0);
-		}
-    }
+    
     
     private void loginUser() {
 		String query = "Select * from users where email = ? AND pass = ?";
