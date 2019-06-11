@@ -29,6 +29,7 @@ public class Menus extends Application {
 	  window.setTitle("Payroll And Contract Management");
 	  
 	  //File menu 
+		//alt+f e hap File menu
 	  Menu fileMenu = new Menu("_File");
 	  
 	 MenuItem mnN = new MenuItem("New");
@@ -143,35 +144,60 @@ public class Menus extends Application {
 		pane.add(btAd1, 3, 7);
 		GridPane.setHalignment(btAdd, HPos.RIGHT);
 	 
-	  HBox hbox = new HBox();
-          Button btn = new Button("Add New Employee");
+	 HBox hbox = new HBox();
+	  
+	  Button btn = new Button("New Employee");
 	  btn.setStyle("-fx-font: 20 arial; -fx-base:lightblue");
-		
+	  
 	  Button btn1 = new Button("Update Employee");
 	  btn1.setStyle("-fx-font: 20 arial; -fx-base:lightblue");
-		
+	  
 	  hbox.setAlignment(Pos.CENTER);
 	  hbox.setPadding(new Insets(20,20,20,20));
 	  hbox.setSpacing(15);
 	  hbox.getChildren().addAll(btn,btn1);
-		
-		 Button btn3 = new Button("<- Back");
+	  
+	  Button btn3 = new Button("<- Back");
 	  BorderPane bp = new BorderPane();
 	  bp.setCenter(pane);
 	  bp.setTop(btn3);
-		
-		Scene scene1 = new Scene(bp,900,500);
+	 
+
+	  Scene scene1 = new Scene(bp,900,500);
 	  btn.setOnAction(e -> window.setScene(scene1)); 
 	  
-		
 	  layout = new BorderPane();
 	  layout.setTop(menuBar);
 	  layout.setBottom(hbox);
 	  layout.setStyle("-fx-background-image: url(DatabaseConn/images/bk2.jpg)");
-		
+
+	  
 	  Scene scene = new Scene(layout, 900, 500);
+	  btn3.setOnAction(e-> window.setScene(scene));
+	  
+	  mnN.setOnAction( e-> window.setScene(scene1));
+	  mnE.setOnAction( e-> Platform.exit());
+
+
+		LeftPane leftpane = new LeftPane();
+		RightPane rightpane = new RightPane();
+
+
+			HBox main = new HBox();
+			main.getChildren().addAll(leftpane,rightpane);
+			
+			leftpane.prefWidthProperty().bind(main.widthProperty().divide(4));
+			rightpane.prefWidthProperty().bind(main.widthProperty().subtract(main.widthProperty().divide(4)));
+			
+			
+			 Button btn4 = new Button("<- Back");
+			  BorderPane bp1 = new BorderPane();
+			  bp1.setCenter(main);
+			  bp1.setTop(btn4);
+			  Scene scene3 = new Scene(bp1,900,500);
+			  btn1.setOnAction(e -> window.setScene(scene3)); 
+			  btn4.setOnAction(e -> window.setScene(scene));
 	  window.setScene(scene);
 	  window.show();
 	}
-
 }
