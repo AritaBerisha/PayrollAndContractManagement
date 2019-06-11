@@ -35,7 +35,7 @@ public class Menus extends Application {
 	 MenuItem mnN = new MenuItem("New");
 	  fileMenu.getItems().add(mnN);
 	  mnN.setAccelerator(new KeyCodeCombination(KeyCode.N,  KeyCombination.CONTROL_DOWN));
-	   
+	   //CTRL+N e hap File/New
 		 
 	  MenuItem mnO = new MenuItem("Open");
 	  fileMenu.getItems().add(mnO); 
@@ -53,8 +53,10 @@ public class Menus extends Application {
 	  mnE.setAccelerator(new KeyCodeCombination(KeyCode.X,  KeyCombination.CONTROL_DOWN));
 	  
 	  //Edit menu
+		
+		//alt+e e hap Edit menu
 	  Menu editMenu = new Menu("_Edit");
-	  editMenu.getItems().add(new MenuItem("Out"));
+	  editMenu.getItems().add(new MenuItem("Cut"));
 	  editMenu.getItems().add(new MenuItem("Copy"));
 	  editMenu.getItems().add(new MenuItem("Paste"));
 	  
