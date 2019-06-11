@@ -25,8 +25,6 @@ public class Menus extends Application {
 	  fileMenu.getItems().add(new MenuItem("Open..."));
 	  fileMenu.getItems().add(new MenuItem("Save..."));
 	  fileMenu.getItems().add(new SeparatorMenuItem());
-	  fileMenu.getItems().add(new MenuItem("Settings..."));
-	  fileMenu.getItems().add(new SeparatorMenuItem());
 	  fileMenu.getItems().add(new MenuItem("Exit..."));
 	  
 	  //Edit menu
