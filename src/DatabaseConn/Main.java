@@ -8,7 +8,11 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -77,7 +81,36 @@ public class Main extends Application {
 		primaryStage.setTitle("Employee Details");
 		primaryStage.setScene(scene);
 		primaryStage.show();
+
+		BorderPane bp = new BorderPane();
+		//bp.setPadding(new Insets(10,10,10,10));
 		
+		HBox hbox2= new HBox();
+		hbox2.setPadding(new Insets(20,20,20,20));
+		hbox2.setSpacing(10);
+		
+		Image searchImage = new Image("file:Images/search.png");
+		ImageView SImageView = new ImageView(searchImage);
+		SImageView.setFitHeight(200);
+		SImageView.setFitWidth(200);
+		
+		Image AddImage = new Image("file:Images/employee.png");
+		ImageView AddImageView = new ImageView(AddImage);
+		AddImageView.setFitHeight(200);
+		AddImageView.setFitWidth(200);
+		
+		Image editImage = new Image("file:Images/analytics.png");
+		ImageView eImageView = new ImageView(editImage);
+		eImageView.setFitHeight(200);
+		eImageView.setFitWidth(200);
+		
+//		hbox2.getChildren().addAll(SImageView,AddImageView,eImageView);
+//		
+//		bp.setTop(hbox);
+//		bp.setCenter(hbox2);
+//		
+//		
+//		Scene scene = new Scene(bp, 800, 600);
 
 	}
 

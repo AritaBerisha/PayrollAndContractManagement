@@ -236,6 +236,7 @@ public class Login extends Application {
      primaryStage.setScene(scene);
        primaryStage.setTitle("Login");
      primaryStage.setResizable(false);
+   
     
      primaryStage.show();
     gridPane.requestFocus();
@@ -266,7 +267,7 @@ public class Login extends Application {
     }
     
     private void loginUser() {
-		String query = "Select * from users where email = ? AND pass = ?";
+		String query = "Select * from users where Employee_email = ? AND Employee_pass = ?";
 		
 		try {
 			
@@ -307,7 +308,7 @@ public class Login extends Application {
 	}
     private void SignUpUser() {
     	
-    	String query1 = "Insert into users values ('"+emailTxt.getText()+"','"+passwordTxt.getText()+"')";
+    	String query1 = "Insert into users(Employee_email,Employee_pass) values ('"+emailTxt.getText()+"','"+passwordTxt.getText()+"')";
         try {
 			
 		
