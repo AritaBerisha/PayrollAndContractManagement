@@ -14,6 +14,7 @@ public class LeftPane extends VBox{
 	TextField txtName = new TextField();
 	TextField txtAge = new TextField();
 	TextField txtYear = new TextField();
+	TextField txtSalary = new TextField();
 	
 	Button btnSave = new Button("Save");
 	Button btnUpdate = new Button("Update");
@@ -24,10 +25,12 @@ public class LeftPane extends VBox{
 		txtName.setFont(new Font(20));
 		txtYear.setFont(new Font(20));
 		txtAge.setFont(new Font(20));
+		txtSalary.setFont(new Font(20));
 		
 		txtName.setPromptText("Enter Name");
 		txtAge.setPromptText("Enter Age");
 		txtYear.setPromptText("Enter Year");
+		txtSalary.setPromptText("Enter Job Salary:");
 		
 		
 		btnSave.setPrefWidth(160);
@@ -44,7 +47,7 @@ public class LeftPane extends VBox{
 		this.setSpacing(20);
 		this.setPadding(new Insets(20));
 		this.setAlignment(Pos.CENTER);
-		this.getChildren().addAll(labelTitle,txtName,txtAge,txtYear,btnSave,btnUpdate,btnDelete);
+		this.getChildren().addAll(labelTitle,txtName,txtAge,txtYear,txtSalary,btnSave,btnUpdate,btnDelete);
 		 
 	}
 
