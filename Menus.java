@@ -145,6 +145,10 @@ public class Menus extends Application {
 	  bp.setCenter(pane);
 	  bp.setTop(btn3);
 		
+		Scene scene1 = new Scene(bp,900,500);
+	  btn.setOnAction(e -> window.setScene(scene1)); 
+	  
+		
 	  layout = new BorderPane();
 	  layout.setTop(menuBar);
 	  layout.setBottom(hbox);
