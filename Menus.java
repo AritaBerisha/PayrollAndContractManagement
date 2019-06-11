@@ -66,7 +66,10 @@ public class Menus extends Application {
 	  layout.setTop(menuBar);
 	  layout.setStyle("-fx-background-color:#b2aca9;");
 	 
-	  
+	  HBox hbox = new HBox();
+          Button btn = new Button("Add New Employee");
+	  btn.setStyle("-fx-font: 20 arial; -fx-base:lightblue");
+		
 	  Scene scene = new Scene(layout, 600, 400);
 	  window.setScene(scene);
 	  window.show();
