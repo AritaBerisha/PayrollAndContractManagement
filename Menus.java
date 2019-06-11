@@ -81,7 +81,7 @@ public class Menus extends Application {
 	  layout.setBottom(hbox);
 	  layout.setStyle("-fx-background-image: url(DatabaseConn/images/bk2.jpg)");
 		
-	  Scene scene = new Scene(layout, 900, 400);
+	  Scene scene = new Scene(layout, 900, 500);
 	  window.setScene(scene);
 	  window.show();
 	}
