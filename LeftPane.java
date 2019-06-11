@@ -23,11 +23,11 @@ public class LeftPane extends VBox{
 	
 	public LeftPane() {
 		
-		txtName.setFont(new Font(20));
-		txtYear.setFont(new Font(20));
-		txtAge.setFont(new Font(20));
+		txtID.setFont(new Font(20));
+		txtDepartament.setFont(new Font(20));
+		txtTitle.setFont(new Font(20));
 		txtSalary.setFont(new Font(20));
-		
+	
 		txtName.setPromptText("Enter Name");
 		txtAge.setPromptText("Enter Age");
 		txtYear.setPromptText("Enter Year");
