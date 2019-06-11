@@ -70,6 +70,9 @@ public class Menus extends Application {
           Button btn = new Button("Add New Employee");
 	  btn.setStyle("-fx-font: 20 arial; -fx-base:lightblue");
 		
+	  Button btn1 = new Button("Update Employee");
+	  btn1.setStyle("-fx-font: 20 arial; -fx-base:lightblue");
+		
 	  Scene scene = new Scene(layout, 600, 400);
 	  window.setScene(scene);
 	  window.show();
