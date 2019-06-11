@@ -72,6 +72,15 @@ public class Menus extends Application {
 	  menuBar.getMenus().addAll(fileMenu, editMenu, search, AddMenu,LangMenu, helpMenu);
 	  
 	 
+		 GridPane pane = new GridPane();
+		
+		pane.setAlignment(Pos.CENTER);
+		
+		pane.setPadding(new Insets(20, 20, 20, 20));
+		pane.setHgap(5);
+		pane.setVgap(5);
+		Label label = new Label();
+		
 	 
 	  HBox hbox = new HBox();
           Button btn = new Button("Add New Employee");
