@@ -20,7 +20,7 @@ public class Main extends Application {
 		
 		pane.setAlignment(Pos.CENTER);
 		pane.setStyle("-fx-background-color:#b2aca9;");
-		pane.setPadding(new Insets(20, 20, 20, 20));
+		pane.setPadding(new Insets(20, 20, 20, 21));
 		pane.setHgap(5);
 		pane.setVgap(5);
 		Label label = new Label();
