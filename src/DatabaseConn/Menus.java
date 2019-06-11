@@ -68,9 +68,6 @@ public class Menus extends MenuBar {
 			//ALT+S e hap search menu
 		  Menu search = new Menu("_Search");
 		  
-		  //Add menu
-			
-		  Menu AddMenu = new Menu("_Add");
 		 
 		 
 		  //Language menu
