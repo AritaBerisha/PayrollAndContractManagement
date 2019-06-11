@@ -40,7 +40,8 @@ public class Menus extends Application {
 	  MenuItem mnO = new MenuItem("Open");
 	  fileMenu.getItems().add(mnO); 
 	  mnO.setAccelerator(new KeyCodeCombination(KeyCode.O,  KeyCombination.CONTROL_DOWN));
-	  
+	  	   //CTRL+O e hap File/Open
+
 	  
 	  MenuItem mnS = new MenuItem("Save");
 	  fileMenu.getItems().add(mnS); 
@@ -61,13 +62,17 @@ public class Menus extends Application {
 	  editMenu.getItems().add(new MenuItem("Paste"));
 	  
 	  //Search menu
+		//ALT+S e hap search menu
 	  Menu search = new Menu("_Search");
 	  
 	  //Add menu
+		
 	  Menu AddMenu = new Menu("_Add");
 	 
 	 
 	  //Language menu
+	//ALT+L e hap language menu
+
 	  Menu LangMenu = new Menu("_Language");
 	  ToggleGroup LangToggle = new ToggleGroup();
 	  
