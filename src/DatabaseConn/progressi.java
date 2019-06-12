@@ -30,4 +30,8 @@ public class progressi extends Application {
                } 
   
         }; 
+     Button b = new Button("loading..."); 
+    
+        b.setOnAction(event); 
+        b.setStyle("-fx-background-color:#60a3bc");
   
