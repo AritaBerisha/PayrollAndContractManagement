@@ -39,6 +39,23 @@ public class Employer {
 	
 	public String getDept() {
 		return dept;
+		
+	public static boolean addEmployer(String position, String dept, int salary) {
+		String query = "INSERT INTO Employers(position, dept, salary) VALUES(?,?,?)";
+		try {
+			PreparedStatement preparedStatement = DBConnection.getConnection().prepareStatement(query);
+			
+			preparedStatement.setString(1, position);
+			preparedStatement.setString(2, dept);
+			preparedStatement.setInt(3, salary);
+			
+			
+			return (preparedStatement.executeUpdate() > 0);
+		} catch(SQLException ex) {
+			ex.printStackTrace();
+			return false;	
+		}
+	}
 	}
 	
 	public void setDept(String dept) {
