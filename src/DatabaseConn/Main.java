@@ -102,13 +102,8 @@ public class Main extends Application {
 		eImageView.setFitHeight(200);
 		eImageView.setFitWidth(200);
 		
-//		hbox2.getChildren().addAll(SImageView,AddImageView,eImageView);
-//		
-//		bp.setTop(hbox);
-//		bp.setCenter(hbox2);
-//		
-//		
-//		Scene scene = new Scene(bp, 800, 600);
+
+
 
 	}
 
