@@ -117,8 +117,8 @@ public class AddEmployee extends BorderPane{
 		String query2 ="Insert into contracts(Contract_date_begin, Contract_date_due, job_title, department,EmpId)"+
 		         "values ('"+empIdConBeg.getText()+"','"+empIdConEnd.getText()+"','"+empJob.getText()+"','"+empDep.getText()+"','"+empId.getText()+"')";
 		
-		String query3 ="Insert into payment(Employee_netto_salary, payment_bonus, tax_ammount)"+
-		         "values ('"+empNetto.getText()+"','"+empBonus.getText()+"','"+empDeduct.getText()+"')";
+		String query3 ="Insert into payment(Employee_netto_salary, payment_bonus, tax_ammount,empId)"+
+		         "values ('"+empNetto.getText()+"','"+empBonus.getText()+"','"+empDeduct.getText()+"','"+empId.getText()+"')";
 		try {
 			PreparedStatement preparedStatement = DBConnection.setConnection().prepareStatement(query);
 				
