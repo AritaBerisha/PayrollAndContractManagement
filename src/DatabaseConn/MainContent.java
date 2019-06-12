@@ -1,5 +1,7 @@
 package DatabaseConn;
 
+import java.util.Locale;
+
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -17,14 +19,15 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
 public class MainContent extends BorderPane {
-     Button btn = new Button("Add Employee");
-     Button btn1 = new Button("Update Employee");
+     Button btn = I18N.buttonForKey("addbutton");
+     Button btn1 =  I18N.buttonForKey("updatebutton");
      Menus menu1 = new Menus();
      HBox hbox2= new HBox();
+ 	private Integer numSwitches = 0;
+
 	public MainContent() {
         Menus menu = new Menus();
-      
-       
+        
 		BorderPane bp = new BorderPane();
 		//bp.setPadding(new Insets(10,10,10,10));
 		
@@ -81,6 +84,10 @@ public class MainContent extends BorderPane {
 		this.setCenter(hbox2);
 		this.setStyle("-fx-background-color:#2B4857;");
 		
+	}
+	public void switchLanguage(Locale locale) {
+		numSwitches++;
+		I18N.setLocale(locale);
 	}
 	
 
