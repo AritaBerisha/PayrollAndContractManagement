@@ -38,7 +38,7 @@ public class Employer {
 	
 	public String getDept() {
 		return dept;
-		
+	}
 	public static boolean addEmployer(String position, String dept, int salary) {
 		String query = "INSERT INTO Employers(position, dept, salary) VALUES(?,?,?)";
 		try {
@@ -55,7 +55,7 @@ public class Employer {
 			return false;	
 		}
 	}
-	}
+	
 	
 	public void setDept(String dept) {
 		this.dept = dept;
