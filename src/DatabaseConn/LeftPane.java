@@ -11,31 +11,30 @@ import javafx.scene.control.TextField;
 public class LeftPane extends VBox{
 	Label  labelTitle = new Label("Employee");
 	
-	TextField txtID = new TextField();
-	TextField txtDepartament = new TextField();
-	TextField txtSalary = new TextField();
+	public TextField txtID = new TextField();
+	public TextField txtSalary = new TextField();
 	
 	
-	Button btnSave = new Button("Save");
+	
 	Button btnUpdate = new Button("Update");
 	Button btnDelete = new Button("Delete");
 	
 	public LeftPane() {
 		
 		txtID.setFont(new Font(20));
-		txtDepartament.setFont(new Font(20));
+		
 		txtSalary.setFont(new Font(20));
 	
 		txtID.setPromptText("Enter Employee ID:");
-		txtDepartament.setPromptText("Enter Departament");
+		
 		txtSalary.setPromptText("Enter Salary:");
 		
 		
-		btnSave.setPrefWidth(160);
+		
 		btnUpdate.setPrefWidth(160);
 		btnDelete.setPrefWidth(160);
 		
-		btnSave.setStyle("-fx-background-color: #ECEFF1;-fx-font-size: 18;-fx-text-fill:#4DD0E1");
+		
 		btnUpdate.setStyle("-fx-background-color: #ECEFF1;-fx-font-size: 18;-fx-text-fill:#4DD0E1");
 		btnDelete.setStyle("-fx-background-color: #ECEFF1;-fx-font-size: 18;-fx-text-fill:#4DD0E1");
 		
@@ -45,7 +44,7 @@ public class LeftPane extends VBox{
 		this.setSpacing(20);
 		this.setPadding(new Insets(20));
 		this.setAlignment(Pos.CENTER);
-		this.getChildren().addAll(labelTitle,txtID,txtDepartament,txtSalary,btnSave,btnUpdate,btnDelete);
+		this.getChildren().addAll(labelTitle,txtID,txtSalary,btnUpdate,btnDelete);
 		 
 	}
 

@@ -44,6 +44,7 @@ public class Login extends Application {
 	
 	private TextField emailTxt = new TextField();
 	private PasswordField passwordTxt = new PasswordField();
+	private TextField userTxt = new TextField();
 
 	
 	private Stage mainStage;
@@ -59,7 +60,7 @@ public class Login extends Application {
     	 
          emailTxt.setPromptText("Email");
          passwordTxt.setPromptText("Password");
-         
+         userTxt.setPromptText("Username");
  
          BorderPane bp = new BorderPane();
          bp.setPadding(new Insets(10,50,50,50));
@@ -83,6 +84,11 @@ public class Login extends Application {
         ImageView usernameIconIV2 = new ImageView(usernameIcon2);
         usernameIconIV2.setFitWidth(20);
         usernameIconIV2.setFitHeight(20);
+        
+        Image usernameIcon3 = new Image("file:Images/email.png");
+        ImageView usernameIconIV3 = new ImageView(usernameIcon3);
+        usernameIconIV3.setFitWidth(20);
+        usernameIconIV3.setFitHeight(20);
  
         HBox hb2=new HBox();
         hb2.setPadding(new Insets(5,20,0,5));
@@ -115,7 +121,7 @@ public class Login extends Application {
         
         
         gridPane.add(usernameIconIV, 0, 0);
-        gridPane.add(emailTxt, 1, 0);
+        gridPane.add(userTxt, 1, 0);
         gridPane.add(usernameIconIV2, 0, 1);
         gridPane.add(passwordTxt, 1, 1);
         gridPane.add(hb2, 1, 2);
@@ -217,10 +223,13 @@ public class Login extends Application {
      scene2.getStylesheets().add("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
      btnRegister.setOnMouseClicked(e->{
     	 gridPaneSU.add(usernameIconIV, 0, 0);
-         gridPaneSU.add(emailTxt, 1, 0);
-         gridPaneSU.add(usernameIconIV2, 0, 1);
-         gridPaneSU.add(passwordTxt, 1, 1);
-         gridPaneSU.add(hbSignUp2, 1, 2);
+         gridPaneSU.add(userTxt, 1, 0);
+         gridPaneSU.add(usernameIconIV3, 0, 1);
+         gridPaneSU.add(emailTxt, 1, 1);
+         gridPaneSU.add(usernameIconIV2,0, 2);
+         gridPaneSU.add(passwordTxt, 1, 2);
+         gridPaneSU.add(hbSignUp2, 1, 3);
+        
     	 primaryStage.setScene(scene2);
     	 primaryStage.setTitle("Sign up");
          primaryStage.setResizable(false);
@@ -251,12 +260,12 @@ public class Login extends Application {
     
     
     private void loginUser() {
-		String query = "Select * from users where Employee_email = ? AND Employee_pass = ?";
+		String query = "Select * from managers where username = ? AND upassword = ?";
 		try {
 			
 			PreparedStatement preparedStatement = DBConnection.setConnection().prepareStatement(query);
 		
-				preparedStatement.setString(1, emailTxt.getText());
+				preparedStatement.setString(1, userTxt.getText());
 				preparedStatement.setString(2, passwordTxt.getText());
 			
 			ResultSet result = preparedStatement.executeQuery();
@@ -292,7 +301,7 @@ public class Login extends Application {
 	}
     private void SignUpUser() {
     	
-    	String query1 = "Insert into users(Employee_email,Employee_pass) values ('"+emailTxt.getText()+"','"+passwordTxt.getText()+"')";
+    	String query1 = "Insert into managers values ('"+userTxt.getText()+"','"+emailTxt.getText()+"','"+passwordTxt.getText()+"')";
         try {
 			
 		
