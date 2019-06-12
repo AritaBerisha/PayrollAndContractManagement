@@ -286,6 +286,7 @@ public class Login extends Application {
 			alert.setHeaderText(null);
 			alert.setContentText(ex.getMessage());
 			alert.showAndWait();
+			ex.printStackTrace();
 			System.exit(0);
 		}
 	}
