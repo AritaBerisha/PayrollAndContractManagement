@@ -12,7 +12,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
 public class MainContent extends BorderPane {
-     Button btn = new Button("New Employee");
+     Button btn = new Button("Add Employee");
      Button btn1 = new Button("Update Employee");
      Menus menu1 = new Menus();
 	public MainContent() {
