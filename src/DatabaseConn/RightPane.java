@@ -21,12 +21,12 @@ public class RightPane extends VBox {
 	public RightPane() {	
 		
 	searchPane.getChildren().addAll(txtSearch,btnSearch);
-	searchPane.setSpacing(10);
-	searchPane.setPadding(new Insets(20));
+	searchPane.setSpacing(8);
+	searchPane.setPadding(new Insets(15));
 	searchPane.setAlignment(Pos.CENTER);
 	
-	table.setPrefHeight(800);
-	this.setPadding(new Insets(20));
+	table.setPrefHeight(600);
+	this.setPadding(new Insets(15));
 	this.getChildren().addAll(searchPane,table);
 	
 	}
