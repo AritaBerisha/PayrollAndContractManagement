@@ -70,6 +70,59 @@ public class Employer {
 		this.salary = salary;
 	}
 	
+	public static boolean updateEmployer(int id, String position, String dept, int salary) {
+		String query = "UPDATE Employers SET position=?, dept=?, salary=? WHERE id=?";
+		
+		try {
+			PreparedStatement preparedStatement = DBConnection.getConnection().prepareStatement(query);
+			
+			preparedStatement.setString(1, position);
+			preparedStatement.setString(2, dept);
+			preparedStatement.setInt(3, salary);
+			preparedStatement.setInt(4, id);
+			
+			return (preparedStatement.executeUpdate() > 0);
+		} catch(SQLException ex) {
+			ex.printStackTrace();
+			return false;
+		}
+	}
 	
+	public static boolean deleteEmployer(int id) {
+		String query = "Delete from Employers where id=?";
+		
+		try {
+			PreparedStatement preparedStatement = DBConnection.getConnection().prepareStatement(query);
+			preparedStatement.setInt(1, id);
+			return (preparedStatement.executeUpdate() > 0);
+		} catch(SQLException ex) {
+			ex.printStackTrace();
+			return false;
+		}
+	}
+	
+	
+	public static List<Employer> getEmployers() {
+		List<Employer> EmployerList = new ArrayList();
+		
+		String query = "Select * from Employers";
+		
+		try {
+			PreparedStatement preparedStatement = DBConnection.getConnection().prepareStatement(query);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			
+			while(resultSet.next()) {
+				Employer Employer = new Employer(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3), resultSet.getInt(4));
+				EmployerList.add(Employer);
+			}
+		} catch(SQLException ex) {
+			ex.printStackTrace();
+		}
+		
+		return EmployerList;
+	}
+}
+
+
 	
 	
