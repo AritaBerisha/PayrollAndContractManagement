@@ -15,8 +15,8 @@ public class MainPane extends Application{
 	Menus menu = new Menus();
 
 	public static void main(String[] args)
-{
-		launch();
+               {    
+		launch(args);
 		}
 	@Override
 	public void start(Stage primaryStage) throws Exception{

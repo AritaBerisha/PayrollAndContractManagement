@@ -13,7 +13,7 @@ public class RightPane extends VBox {
 	HBox searchPane = new HBox();
 	
 	TextField txtSearch = new TextField();
-	Button btnSearch = new Button("Search");
+	Button btnSearch = new Button("Search!");
 	
 
 	TableView table = new TableView();

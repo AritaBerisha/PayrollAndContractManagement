@@ -41,8 +41,8 @@ public class LeftPane extends VBox{
 		labelTitle.setStyle("-fx-font-size: 20px;-fx-text-fill:#FFF");
 		
 		this.setStyle("-fx-background-color: lightblue");
-		this.setSpacing(20);
-		this.setPadding(new Insets(20));
+		this.setSpacing(18);
+		this.setPadding(new Insets(18));
 		this.setAlignment(Pos.CENTER);
 		this.getChildren().addAll(labelTitle,txtID,txtSalary,btnUpdate,btnDelete);
 		 
