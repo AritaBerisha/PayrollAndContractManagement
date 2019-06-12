@@ -85,7 +85,7 @@ public class Menus extends MenuBar {
 		  //helpMenu.getItems().add(new MenuItem("Welcome"));
 		  mnW = new MenuItem("Welcome");
 		  helpMenu.getItems().add(mnW);
-		  mnI = new MenuItem("Help Content");
+		  //mnI = new MenuItem("Help Content");
 		  helpMenu.getItems().add(mnI);
 
 		  Menu search = new Menu("_Search");

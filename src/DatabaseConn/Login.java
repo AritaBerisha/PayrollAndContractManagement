@@ -45,7 +45,7 @@ public class Login extends Application {
 	private TextField emailTxt = new TextField();
 	private PasswordField passwordTxt = new PasswordField();
 
-	private Connection dbConnection;
+	
 	private Stage mainStage;
 	
     public static void main(String[] args) {
@@ -56,7 +56,7 @@ public class Login extends Application {
     public void start(Stage primaryStage) {
     	//kta e kom kriju edhe e kom perdor te loginUser pasi qe login osht me sukses 
     	 mainStage = primaryStage;
-    	 setConnection();
+    	 
          emailTxt.setPromptText("Email");
          passwordTxt.setPromptText("Password");
          
@@ -247,29 +247,14 @@ public class Login extends Application {
     
     ///////////DataBase///////////////////////////////////////////////
     
-    private void setConnection() {
-		try {
-			//Class.forName("com.mysql.cj.jdbc.Driver");
-			Class.forName("com.mysql.jdbc.Driver");
-			dbConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/login?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","");
-			//dbConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/knkproject?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","");
-			
-		} catch (Exception ex) {
-			Alert alert = new Alert(AlertType.ERROR);
-			alert.setTitle("Database problem1");
-			alert.setHeaderText(null);
-			alert.setContentText("Can not connect to database");
-			alert.showAndWait();
-			ex.printStackTrace();
-			System.exit(0);
-		}
-    }
+   
+    
     
     private void loginUser() {
 		String query = "Select * from users where Employee_email = ? AND Employee_pass = ?";
 		try {
 			
-			PreparedStatement preparedStatement = dbConnection.prepareStatement(query);
+			PreparedStatement preparedStatement = DBConnection.setConnection().prepareStatement(query);
 		
 				preparedStatement.setString(1, emailTxt.getText());
 				preparedStatement.setString(2, passwordTxt.getText());
@@ -310,7 +295,7 @@ public class Login extends Application {
         try {
 			
 		
-			Statement statement = dbConnection.createStatement();
+			Statement statement = DBConnection.setConnection().createStatement();
 			statement.executeUpdate(query1);
 		
 			Alert alert = new Alert(AlertType.INFORMATION);
