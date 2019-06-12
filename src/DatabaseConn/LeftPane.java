@@ -21,9 +21,9 @@ public class LeftPane extends VBox{
 	
 	public LeftPane() {
 		
-		txtID.setFont(new Font(18));
+		txtID.setFont(new Font(20));
 		
-		txtSalary.setFont(new Font(18));
+		txtSalary.setFont(new Font(20));
 	
 		txtID.setPromptText("Enter Employee ID:");
 		
