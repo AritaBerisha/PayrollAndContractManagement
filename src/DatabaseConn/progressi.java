@@ -35,7 +35,12 @@ public class progressi extends Application {
         b.setOnAction(event); 
         b.setStyle("-fx-background-color:#60a3bc");
   
-   r.getChildren().add(pb); 
+        r.getChildren().add(pb); 
         r.getChildren().add(b); 
         
+         Scene sc = new Scene(r, 200, 200);
+        s.setScene(sc); 
+        s.show(); 
+    } 
+  
   
