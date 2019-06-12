@@ -23,7 +23,6 @@ public class Main extends Application {
 		GridPane pane = new GridPane();
 		
 		pane.setAlignment(Pos.CENTER);
-		pane.setStyle("-fx-background-color:#b2aca9;");
 		pane.setPadding(new Insets(20, 20, 20, 20));
 		pane.setHgap(5);
 		pane.setVgap(5);
@@ -77,7 +76,7 @@ public class Main extends Application {
 		pane.add(btAd1, 3, 7);
 		GridPane.setHalignment(btAdd, HPos.RIGHT);
 		
-		Scene scene = new Scene(pane);
+		Scene scene = new Scene(pane ,900,500);
 		primaryStage.setTitle("Employee Details");
 		primaryStage.setScene(scene);
 		primaryStage.show();
