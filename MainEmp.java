@@ -120,3 +120,81 @@ public class MainEmp extends Application {
             
             return row ;
         });
+
+	EmployersTable.getColumns().add(column1);
+		EmployersTable.getColumns().add(column2);
+		EmployersTable.getColumns().add(column3);
+		EmployersTable.getColumns().add(column4);
+	
+		
+		EmployersTable.setPrefWidth(650);
+		EmployersTable.setPrefHeight(200);
+		// Main Pane
+		HBox mainPane = new HBox(10);
+		mainPane.setStyle("-fx-background-color: lightblue");
+
+		mainPane.getChildren().addAll(leftPane, EmployersTable);
+		
+		mainPane.setPadding(new Insets(15, 15, 15 ,15));
+		
+		
+		Scene scene = new Scene(mainPane, 1000, 400);
+		
+		primaryStage.setTitle("Library");
+		primaryStage.setScene(scene);
+		
+		showEmployers();
+		
+		primaryStage.show();
+	}
+	
+
+	public static void main(String[] args) {
+		Application.launch(args);
+	}
+	
+	public void showEmployers() {
+		List<Employer> Employers = Employer.getEmployers();
+		
+		ObservableList<Employer> EmployerList = FXCollections.observableArrayList();
+		
+		for(int i = 0; i < Employers.size(); i++) {
+			EmployerList.add(Employers.get(i));
+		}
+		
+		EmployersTable.setItems(EmployerList);
+	}
+	
+	public void insertEmployer() {
+		
+		if(Employer.addEmployer(positionTxt.getText(), deptTxt.getText(), Integer.parseInt(salaryTxt.getText()))) {
+			showEmployers();
+			clearForm();
+		}
+	}
+	
+	public void deleteEmployer() {
+		if(Employer.deleteEmployer(Integer.parseInt(idTxt.getText()))) {
+			showEmployers();
+			clearForm();
+		}
+	}
+	
+	
+	public void updateEmployer() {
+		if(Employer.updateEmployer(Integer.parseInt(idTxt.getText()), positionTxt.getText(), deptTxt.getText(), Integer.parseInt(salaryTxt.getText()))) {
+			showEmployers();
+			clearForm();
+		}
+	}
+	
+	public void clearForm() {
+		idTxt.setText("");
+		positionTxt.setText("");
+		deptTxt.setText("");
+		salaryTxt.setText("");
+	}
+	
+}
+
+
