@@ -1,4 +1,4 @@
-package ProjektiNew;
+package DatabaseConn;
 
 import javafx.application.Application; 
 import javafx.scene.Scene; 
