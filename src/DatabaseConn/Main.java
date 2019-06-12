@@ -82,7 +82,6 @@ public class Main extends Application {
 		primaryStage.show();
 
 		BorderPane bp = new BorderPane();
-		//bp.setPadding(new Insets(10,10,10,10));
 		
 		HBox hbox2= new HBox();
 		hbox2.setPadding(new Insets(20,20,20,20));
@@ -103,13 +102,8 @@ public class Main extends Application {
 		eImageView.setFitHeight(200);
 		eImageView.setFitWidth(200);
 		
-//		hbox2.getChildren().addAll(SImageView,AddImageView,eImageView);
-//		
-//		bp.setTop(hbox);
-//		bp.setCenter(hbox2);
-//		
-//		
-//		Scene scene = new Scene(bp, 800, 600);
+
+
 
 	}
 

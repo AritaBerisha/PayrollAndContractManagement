@@ -33,7 +33,6 @@ import javafx.scene.input.KeyCombination;
 public class MainProgram {
 	public static void createMainStage() {
 		Stage mainStage = new Stage();
-		
 		MainContent mn = new MainContent();
 		
 		AddEmployee ae = new AddEmployee();

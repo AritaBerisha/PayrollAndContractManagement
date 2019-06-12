@@ -1,5 +1,7 @@
 package DatabaseConn;
 
+import java.util.Locale;
+
 import javafx.application.Application;
 //import .sun.prism.Image;
 import javafx.application.Platform;
@@ -23,31 +25,29 @@ public class Menus extends MenuBar {
 //	Stage window;
 //	BorderPane layout;
 
-	public MenuItem mnN = new MenuItem("New");
-	public MenuItem mnW = new MenuItem("Welcome");
-	public MenuItem mnI = new MenuItem("Info");
-	public MenuItem mnE = new MenuItem("Exit...");
-	
-	
-	
+	public MenuItem mnN = I18N.MenuItemForKey("new");
+	public MenuItem mnW = I18N.MenuItemForKey("welcome");
+	public MenuItem mnI = I18N.MenuItemForKey("info");
+	public MenuItem mnE = I18N.MenuItemForKey("exit");
+	private Integer numSwitches = 0;
 	public Menus() {
 	 
 	  //File menu 
 		//alt+f e hap File menu
-		 Menu fileMenu = new Menu("_File");
+		 Menu fileMenu = I18N.menuForKey("file");
 		  
-		 mnN = new MenuItem("New");
+		 mnN = I18N.MenuItemForKey("new");
 		  fileMenu.getItems().add(mnN);
 		  mnN.setAccelerator(new KeyCodeCombination(KeyCode.N,  KeyCombination.CONTROL_DOWN));
 		   //CTRL+N e hap File/New
 			 
-		  MenuItem mnO = new MenuItem("Open");
+		  MenuItem mnO = I18N.MenuItemForKey("open");
 		  fileMenu.getItems().add(mnO); 
 		  mnO.setAccelerator(new KeyCodeCombination(KeyCode.O,  KeyCombination.CONTROL_DOWN));
 		  	   //CTRL+O e hap File/Open
 
 		  
-		  MenuItem mnS = new MenuItem("Save");
+		  MenuItem mnS = I18N.MenuItemForKey("save");
 		  fileMenu.getItems().add(mnS); 
 		  mnS.setAccelerator(new KeyCodeCombination(KeyCode.S,  KeyCombination.CONTROL_DOWN));
 		 
@@ -60,36 +60,38 @@ public class Menus extends MenuBar {
 		  //Edit menu
 			
 			//alt+e e hap Edit menu
-		  Menu editMenu = new Menu("_Edit");
-		  editMenu.getItems().add(new MenuItem("Cut"));
-		  editMenu.getItems().add(new MenuItem("Copy"));
-		  editMenu.getItems().add(new MenuItem("Paste"));
+		  Menu editMenu =I18N.menuForKey("edit");
+		  editMenu.getItems().add(I18N.MenuItemForKey("cut"));
+		  editMenu.getItems().add(I18N.MenuItemForKey("copy"));
+		  editMenu.getItems().add(I18N.MenuItemForKey("paste"));
 		  
 		
 		  //Language menu
 		//ALT+L e hap language menu
 
-		  Menu LangMenu = new Menu("_Language");
+		  Menu LangMenu = I18N.menuForKey("language");
 		  ToggleGroup LangToggle = new ToggleGroup();
 		  
-		  RadioMenuItem English = new RadioMenuItem("English");
-		  RadioMenuItem Albanian = new RadioMenuItem("Albanian");
+		  RadioMenuItem English = I18N.radioMenuItemForKey("radioitem.english");
+		  English.setOnAction((e)->switchLanguage(Locale.ENGLISH));
+		  RadioMenuItem German = I18N.radioMenuItemForKey("radioitem.german");
+		  German.setOnAction((e)->switchLanguage(Locale.GERMAN));
 		  
 		  English.setToggleGroup(LangToggle);
-		  Albanian.setToggleGroup(LangToggle);
+		  German.setToggleGroup(LangToggle);
 		  
-		  LangMenu.getItems().addAll(English, Albanian);
+		  LangMenu.getItems().addAll(English,German);
 		  
 		  //Help menu
-		  Menu helpMenu = new Menu("_Help");
+		  Menu helpMenu = I18N.menuForKey("help");
 		  //helpMenu.getItems().add(new MenuItem("Welcome"));
-		  mnW = new MenuItem("Welcome");
+		  mnW = I18N.MenuItemForKey("welcome");
 		  helpMenu.getItems().add(mnW);
 		  //mnI = new MenuItem("Help Content");
 		  helpMenu.getItems().add(mnI);
 
-		  Menu search = new Menu("_Search");
-		  Menu AddMenu = new Menu("_Add Menu");
+		  Menu search = I18N.menuForKey("search");
+		  Menu AddMenu =I18N.menuForKey("addmenu");
 	  
 	  //Main menu bar
 	 
@@ -97,6 +99,10 @@ public class Menus extends MenuBar {
 	  this.setStyle("-fx-background-color:#53788D");
 	  
 
+	}
+	public void switchLanguage(Locale locale) {
+		numSwitches++;
+		I18N.setLocale(locale);
 	}
 	public static void main(String[] args) {
 		Application.launch(args);
