@@ -108,8 +108,7 @@ public class Login extends Application {
        //ktu e kom bo me shortcut me u log in..nese e shtyp CTRL+L munesh mu login
         btnLogin.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.L && e.isShortcutDown()) {
-            	loginUser();
-            	
+            	loginUser();	
             }
         }); btnLogin.requestFocus();
         
@@ -248,13 +247,12 @@ public class Login extends Application {
     
     ///////////DataBase///////////////////////////////////////////////
     
-    
-    
-    
     private void setConnection() {
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			dbConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/knkproject?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","");
+			//Class.forName("com.mysql.cj.jdbc.Driver");
+			Class.forName("com.mysql.jdbc.Driver");
+			dbConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/login?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","");
+			//dbConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/knkproject?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","");
 			
 		} catch (Exception ex) {
 			Alert alert = new Alert(AlertType.ERROR);
@@ -262,13 +260,13 @@ public class Login extends Application {
 			alert.setHeaderText(null);
 			alert.setContentText("Can not connect to database");
 			alert.showAndWait();
+			ex.printStackTrace();
 			System.exit(0);
 		}
     }
     
     private void loginUser() {
 		String query = "Select * from users where Employee_email = ? AND Employee_pass = ?";
-		
 		try {
 			
 			PreparedStatement preparedStatement = dbConnection.prepareStatement(query);
@@ -336,8 +334,6 @@ public class Login extends Application {
 		}
 	}
     	
-    	
-    
 }
 
 

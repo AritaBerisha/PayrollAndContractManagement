@@ -1,7 +1,7 @@
 package DatabaseConn;
 
-import com.sun.prism.Image;
 import javafx.application.Application;
+//import .sun.prism.Image;
 import javafx.application.Platform;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -12,7 +12,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
-import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -25,6 +24,8 @@ public class Menus extends MenuBar {
 //	BorderPane layout;
 
 	public MenuItem mnN = new MenuItem("New");
+	public MenuItem mnW = new MenuItem("Welcome");
+	public MenuItem mnI = new MenuItem("Info");
 	public MenuItem mnE = new MenuItem("Exit...");
 	
 	
@@ -89,8 +90,12 @@ public class Menus extends MenuBar {
 		  
 		  //Help menu
 		  Menu helpMenu = new Menu("_Help");
-		  helpMenu.getItems().add(new MenuItem("Welcome"));
-		  helpMenu.getItems().add(new MenuItem("Help Content"));
+		  //helpMenu.getItems().add(new MenuItem("Welcome"));
+		  mnW = new MenuItem("Welcome");
+		  helpMenu.getItems().add(mnW);
+		  mnI = new MenuItem("Help Content");
+		  helpMenu.getItems().add(mnI);
+
 	  
 	  
 	  //Main menu bar
@@ -99,5 +104,8 @@ public class Menus extends MenuBar {
 	  this.setStyle("-fx-background-color:#53788D");
 	  
 
+	}
+	public static void main(String[] args) {
+		Application.launch(args);
 	}
 }

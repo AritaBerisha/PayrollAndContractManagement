@@ -37,6 +37,8 @@ public class MainProgram {
 		MainContent mn = new MainContent();
 		AddEmployee ae = new AddEmployee();
 		UpdateEmployee ue = new UpdateEmployee();
+		Welcome we = new Welcome();
+		Info info = new Info();
 		
 		Scene scene = new Scene(mn, 800, 600);
 		
@@ -48,6 +50,14 @@ public class MainProgram {
 		mn.btn1.setOnAction(e->mainStage.setScene(sceneUpdate));
 		ue.btn4.setOnAction(e->mainStage.setScene(scene));
 		
+		Scene sceneWelcome= new Scene(we,800,600);
+		we.btn3.setOnAction(e->mainStage.setScene(scene));
+		
+		Scene sceneInfo= new Scene(info,800,600);
+		info.btn3.setOnAction(e->mainStage.setScene(scene));
+		
+		mn.menu1.mnW.setOnAction(e->mainStage.setScene(sceneWelcome));
+		mn.menu1.mnI.setOnAction(e->mainStage.setScene(sceneInfo));
 		mn.menu1.mnN.setOnAction( e-> mainStage.setScene(sceneAdd));
 		mn.menu1.mnE.setOnAction(e-> Platform.exit());
 		
@@ -57,8 +67,6 @@ public class MainProgram {
 		
 	}
 	public static void main(String[] args) {
-		
 	}
-	
-	
+
 }

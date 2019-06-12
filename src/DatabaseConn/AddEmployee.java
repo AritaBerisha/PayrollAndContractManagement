@@ -12,9 +12,7 @@ import javafx.scene.layout.GridPane;
 
 public class AddEmployee extends BorderPane{
 	public Button btn3 = new Button("<- Back");
-
 	public AddEmployee() {
-		 
 		GridPane pane = new GridPane();
 		
 		pane.setAlignment(Pos.CENTER);
