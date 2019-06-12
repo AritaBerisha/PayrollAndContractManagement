@@ -82,7 +82,6 @@ public class Main extends Application {
 		primaryStage.show();
 
 		BorderPane bp = new BorderPane();
-		//bp.setPadding(new Insets(10,10,10,10));
 		
 		HBox hbox2= new HBox();
 		hbox2.setPadding(new Insets(20,20,20,20));
