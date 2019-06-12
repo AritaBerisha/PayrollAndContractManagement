@@ -30,6 +30,7 @@ public class UpdateEmployee extends BorderPane{
 		leftpane.btnDelete.setOnAction(e->DeleteEmp());
 		this.setCenter(main);
 	    this.setTop(btn4); 
+	    
 	}
 	public void UpdateEmp() {
 		

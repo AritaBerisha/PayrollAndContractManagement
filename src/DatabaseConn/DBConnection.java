@@ -13,9 +13,9 @@ public class DBConnection {
 	 public static Connection setConnection() {
 			try {
 				//Class.forName("com.mysql.cj.jdbc.Driver");
-				Class.forName("com.mysql.jdbc.Driver");
-			    dbConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/login","root","");
-				//dbConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/knkproject?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","");
+				Class.forName("com.mysql.cj.jdbc.Driver");
+			    //dbConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/login","root","");
+				dbConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/knkproject?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root","");
 				
 			} catch (Exception ex) {
 				Alert alert = new Alert(AlertType.ERROR);

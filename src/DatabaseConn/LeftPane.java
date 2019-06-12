@@ -1,6 +1,7 @@
 package DatabaseConn;
 
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -35,12 +36,18 @@ public class LeftPane extends VBox{
 		btnDelete.setPrefWidth(160);
 		
 		
-		btnUpdate.setStyle("-fx-background-color: #ECEFF1;-fx-font-size: 18;-fx-text-fill:#4DD0E1");
-		btnDelete.setStyle("-fx-background-color: #ECEFF1;-fx-font-size: 18;-fx-text-fill:#4DD0E1");
+		btnUpdate.setTextFill(Color.rgb(186, 201, 209));
+	       btnUpdate.setStyle("-fx-background-radius: 30, 30, 29, 28;\r\n" + 
+	          		"    -fx-padding: 3px 10px 3px 10px;\r\n" + 
+	          		"    -fx-background-color: #2C3E48");
+		btnDelete.setTextFill(Color.rgb(186, 201, 209));
+	       btnDelete.setStyle("-fx-background-radius: 30, 30, 29, 28;\r\n" + 
+	          		"    -fx-padding: 3px 10px 3px 10px;\r\n" + 
+	          		"    -fx-background-color: #2C3E48");
 		
-		labelTitle.setStyle("-fx-font-size: 20px;-fx-text-fill:#FFF");
+		labelTitle.setStyle("-fx-font-size: 20px;-fx-text-fill:rgb(186, 201, 209)");
 		
-		this.setStyle("-fx-background-color: lightblue");
+		this.setStyle("-fx-background-color:  #53788D");
 		this.setSpacing(18);
 		this.setPadding(new Insets(18));
 		this.setAlignment(Pos.CENTER);

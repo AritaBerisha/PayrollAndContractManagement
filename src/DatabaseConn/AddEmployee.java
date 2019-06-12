@@ -14,9 +14,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 
 public class AddEmployee extends BorderPane{
 	public Button btn3 = new Button("<- Back");
+	
 	TextField empId = new TextField();
 	TextField empName = new TextField();
 	TextField empSurname = new TextField();
@@ -33,11 +35,12 @@ public class AddEmployee extends BorderPane{
 	TextField empNetto = new TextField();
 	TextField empBonus = new TextField();
 	TextField empDeduct = new TextField();
+	TextField empSalary = new TextField();
 	
 	
 	public AddEmployee() {
 		GridPane pane = new GridPane();
-		
+	
 		pane.setAlignment(Pos.CENTER);
 		
 		pane.setPadding(new Insets(20, 20, 20, 20));
@@ -47,7 +50,7 @@ public class AddEmployee extends BorderPane{
 		
 		label.setText("Employee Details");
 
-		label.setStyle("-fx-background-color:lightblue; -fx-font-size:15px;");
+		label.setStyle("-fx-font-size:15px;-fx-color:rgb(186, 201, 209)");
 		pane.getChildren().add(label);
 		
 	
@@ -85,14 +88,22 @@ public class AddEmployee extends BorderPane{
 		pane.add(empBonus, 3, 5);
 		pane.add(new Label("Deduction Payment:"), 2, 6);
 		pane.add(empDeduct, 3, 6);
+		pane.add(new Label("Deduction Payment:"), 2, 7);
+		pane.add(empSalary, 3, 7);
 		
 		Button btAdd = new Button("Add Record");
-		btAdd.setStyle("-fx-font: 15 arial; -fx-base:lightblue");
-		pane.add(btAdd, 2, 7);
+		btAdd.setTextFill(Color.rgb(186, 201, 209));
+	       btAdd.setStyle("-fx-background-radius: 30, 30, 29, 28;\r\n" + 
+	          		"    -fx-padding: 3px 10px 3px 10px;\r\n" + 
+	          		"    -fx-background-color: #2C3E48");
+		pane.add(btAdd, 2, 8);
 		GridPane.setHalignment(btAdd, HPos.RIGHT);
 		Button btAd1 = new Button("Clear");
-		btAd1.setStyle("-fx-font: 15 arial; -fx-base: lightblue");
-		pane.add(btAd1, 3, 7);
+		btAd1.setTextFill(Color.rgb(186, 201, 209));
+	       btAd1.setStyle("-fx-background-radius: 30, 30, 29, 28;\r\n" + 
+	          		"    -fx-padding: 3px 10px 3px 10px;\r\n" + 
+	          		"    -fx-background-color: #2C3E48");
+		pane.add(btAd1, 3, 8);
 		GridPane.setHalignment(btAdd, HPos.RIGHT);
 		
 		btAdd.setOnAction(e->AddEmp());
@@ -102,6 +113,7 @@ public class AddEmployee extends BorderPane{
 		
 		this.setCenter(pane);
 		this.setTop(btn3);
+		this.setStyle("-fx-background-color:  #53788D");
 	
 		
 		
@@ -114,8 +126,8 @@ public class AddEmployee extends BorderPane{
 		String query = "Insert into employees(Employee_id, Employee_name, Employee_surname,	Employee_birthday, status, Employee_number, Employee_email, Employee_address, Employee_hours) " + 
 				"values ('"+empId.getText()+"','"+empName.getText()+"','"+empSurname.getText()+"','"+empBirth.getText()+"','"+activeChb.isSelected()+"','"+empContact.getText()+"','"+empEmail.getText()+"','"+empAddress.getText()+"','"+empHours.getText()+"')";
 		
-		String query2 ="Insert into contracts(Contract_date_begin, Contract_date_due, job_title, department,EmpId)"+
-		         "values ('"+empIdConBeg.getText()+"','"+empIdConEnd.getText()+"','"+empJob.getText()+"','"+empDep.getText()+"','"+empId.getText()+"')";
+		String query2 ="Insert into contracts(Contract_date_begin, Contract_date_due, job_title, department,EmpId,empSalary )"+
+		         "values ('"+empIdConBeg.getText()+"','"+empIdConEnd.getText()+"','"+empJob.getText()+"','"+empDep.getText()+"','"+empId.getText()+"','"+empSalary.getText()+"')";
 		
 		String query3 ="Insert into payment(Employee_netto_salary, payment_bonus, tax_ammount,empId)"+
 		         "values ('"+empNetto.getText()+"','"+empBonus.getText()+"','"+empDeduct.getText()+"','"+empId.getText()+"')";
