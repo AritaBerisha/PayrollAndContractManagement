@@ -42,5 +42,10 @@ public class progressi extends Application {
         s.setScene(sc); 
         s.show(); 
     } 
-  
+  public static void main(String args[]) 
+    { 
+        
+        launch(args); 
+    } 
+} 
   
