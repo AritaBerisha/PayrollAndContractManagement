@@ -50,8 +50,6 @@ public class AddEmployee extends BorderPane{
 		label.setStyle("-fx-background-color:lightblue; -fx-font-size:15px;");
 		pane.getChildren().add(label);
 		
-	
-		
 		
 		pane.add(new Label("Employee ID:"), 0, 1);
 		pane.add(empId, 1, 1);
