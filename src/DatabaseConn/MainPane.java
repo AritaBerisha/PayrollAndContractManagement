@@ -29,8 +29,7 @@ public class MainPane extends Application{
 		leftpane.prefWidthProperty().bind(main.widthProperty().divide(4));
 		rightpane.prefWidthProperty().bind(main.widthProperty().subtract(main.widthProperty().divide(4)));
 		
-		Scene scene = new Scene(bp,1000,800);
-		primaryStage.setTitle("Main");
+		Scene scene = new Scene(bp,800,600);
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
