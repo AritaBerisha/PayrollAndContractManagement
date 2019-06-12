@@ -88,7 +88,8 @@ public class Menus extends MenuBar {
 		  mnI = new MenuItem("Help Content");
 		  helpMenu.getItems().add(mnI);
 
-	  
+		  Menu search = new Menu("_Search");
+		  Menu AddMenu = new Menu("_Add Menu");
 	  
 	  //Main menu bar
 	 

@@ -22,7 +22,7 @@ public class Welcome extends BorderPane{
 		pane.setVgap(5);
 		Label label = new Label();
 		
-		label.setText("We'll have a welcome page here");
+		label.setText("We'll have a welcome page here!");
 
 		label.setStyle("-fx-background-color:lightblue; -fx-font-size:15px;");
 		pane.getChildren().add(label);
