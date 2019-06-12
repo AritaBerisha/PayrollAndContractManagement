@@ -1,8 +1,13 @@
 package DatabaseConn;
 
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
@@ -15,13 +20,15 @@ public class MainContent extends BorderPane {
      Button btn = new Button("Add Employee");
      Button btn1 = new Button("Update Employee");
      Menus menu1 = new Menus();
+     HBox hbox2= new HBox();
 	public MainContent() {
         Menus menu = new Menus();
+      
        
 		BorderPane bp = new BorderPane();
 		//bp.setPadding(new Insets(10,10,10,10));
 		
-		HBox hbox2= new HBox();
+	   // HBox hbox2= new HBox();
 		hbox2.setPadding(new Insets(50,50,50,50));
 		
 		VBox vbox1 = new VBox();
@@ -57,15 +64,19 @@ public class MainContent extends BorderPane {
 		  
 		  vbox1.getChildren().addAll(SImageView,btn1);
 		  vbox2.getChildren().addAll(AImageView,btn);
-		  
-		  
+		 
 		  
 		  Button btn3 = new Button("<- Back");
 		  
 		hbox2.getChildren().addAll(vbox1,vbox2);
 		hbox2.setSpacing(10);
 		hbox2.setAlignment(Pos.CENTER);
-		
+			
+		 
+	 
+	         
+	        VBox vbox3= new VBox();
+	        //vbox3.getChildren().addAll(menu1,tab);
 		this.setTop(menu1);
 		this.setCenter(hbox2);
 		this.setStyle("-fx-background-color:#2B4857;");

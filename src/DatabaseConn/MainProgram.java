@@ -34,11 +34,14 @@ public class MainProgram {
 	
 	public static void createMainStage() {
 		Stage mainStage = new Stage();
+		
 		MainContent mn = new MainContent();
+		
 		AddEmployee ae = new AddEmployee();
 		UpdateEmployee ue = new UpdateEmployee();
 		Welcome we = new Welcome();
 		Help help = new Help();
+		
 		
 		Scene scene = new Scene(mn, 800, 600);
 		
@@ -58,6 +61,9 @@ public class MainProgram {
 		mn.menu1.mnI.setOnAction(e->help.about());
 		mn.menu1.mnN.setOnAction( e-> mainStage.setScene(sceneAdd));
 		mn.menu1.mnE.setOnAction(e-> Platform.exit());
+		
+		
+		
 		
 		mainStage.setTitle("Main program!");
 		mainStage.setScene(scene);
