@@ -8,118 +8,75 @@ import java.util.List;
 
 public class Employer {
 
-	private int id;
-	private String position;
-	private String dept;
-	private int salary;
-	private String BeginDate; 
-	private String EndDate;
+	private int EmpId;
+	private String job_title;
+	private String department;
+	private int empSalary;
+	private String Contract_date_begin; 
+	private String Contract_date_due;
 	
 	
-	public Employer(int id, String position, String dept, int salary,String BeginDate, String EndDate) {
-		this.id = id;
-		this.position = position;
-		this.dept = dept;
-		this.salary = salary;
-		this.BeginDate=BeginDate;
-		this.EndDate=EndDate;
+	public Employer(int EmpId, String job_title, String department, int empSalary,String Contract_date_begin, String Contract_date_due) {
+		this.EmpId = EmpId;
+		this.job_title = job_title;
+		this.department = department;
+		this.empSalary = empSalary;
+		this.Contract_date_begin=Contract_date_begin;
+		this.Contract_date_due=Contract_date_due;
 		
 	}
 	
-	public int getId() {
-		return id;
+	public int getEmpId() {
+		return EmpId;
 	}
 	
-//	public void setId(int id) {
-//		this.id = id;
-//	}
-	
-	public String getBeginDate() {
-		return BeginDate;
+	public void setEmpId(int EmpId) {
+		this.EmpId = EmpId;
 	}
 	
-//	public void setBeginDate(String beginDate) {
-//		this.BeginDate = beginDate;
-//	}
-	public String getEndDate() {
-		return EndDate;
+	public String getContract_date_begin() {
+		return Contract_date_begin;
 	}
 	
-//	public void setEndDate(String endDate) {
-//		this.EndDate = endDate;
-//	}
-	
-	public String getPosition() {
-		return position;
+	public void setContract_date_begin(String Contract_date_begin) {
+		this.Contract_date_begin = Contract_date_begin;
+	}
+	public String getContract_date_due() {
+		return Contract_date_due;
 	}
 	
-//	public void setPosition(String position) {
-//		this.position = position;
-//	}
-	
-	public String getDept() {
-		return dept;
-	}
-	public static boolean addEmployer(int id,String position, String dept, int salary,String BeginDate, String EndDate) {
-		//String query = "INSERT INTO contracts(position, dept, salary) VALUES(?,?,?)";
-		String query ="Insert into contracts(Contract_date_begin,Contract_date_due, job_title, department,EmpId,empSalary )"+
-		         "values ('"+BeginDate+"','"+EndDate+"','"+position+"','"+dept+"','"+id+"','"+salary+"')";
-		try {
-			PreparedStatement preparedStatement = DBConnection.setConnection().prepareStatement(query);
-			
-			preparedStatement.executeUpdate();
-			
-			
-			return (preparedStatement.executeUpdate() > 0);
-		} catch(SQLException ex) {
-			ex.printStackTrace();
-			return false;	
-		}
+	public void setContract_date_due(String Contract_date_due) {
+		this.Contract_date_due = Contract_date_due;
 	}
 	
-	
-//	public void setDept(String dept) {
-//		this.dept = dept;
-//	}
-	
-	public int getSalary() {
-		return salary;
+	public String getJob_title() {
+		return job_title;
 	}
 	
-//	public void setSalary(int salary) {
-//		this.salary = salary;
-//	}
-	
-	public static boolean updateEmployer(int id, String position, String dept, int salary,String BeginDate, String EndDate) {
-		String query ="Update contracts set Contract_date_begin='"+BeginDate+"', Contract_date_due='"+EndDate+"', job_title='"+position+"', department='"+dept+"',empSalary='"+salary+"' where EmpId='"+id+"'";                                 
-		
-		try {
-			PreparedStatement preparedStatement = DBConnection.setConnection().prepareStatement(query);
-			
-			preparedStatement.executeUpdate();
-			
-			
-			return (preparedStatement.executeUpdate() > 0);
-		} catch(SQLException ex) {
-			ex.printStackTrace();
-			return false;
-		}
+	public void setJob_title(String job_title) {
+		this.job_title = job_title;
 	}
 	
-	public static boolean deleteEmployer(int id) {
-		String query = "Delete from contracts where EmpId='"+id+"'";
-		
-		try {
-			PreparedStatement preparedStatement = DBConnection.setConnection().prepareStatement(query);
-			preparedStatement.executeUpdate();
-			return (preparedStatement.executeUpdate() > 0);
-		} catch(SQLException ex) {
-			ex.printStackTrace();
-			return false;
-		}
+	public String getDepartment() {
+		return department;
+	}
+
+	
+	
+	public void setDepartment(String department) {
+		this.department = department;
 	}
 	
+	public int getEmpSalary() {
+		return empSalary;
+	}
 	
+	public void setEmpSalary(int empSalary) {
+		this.empSalary = empSalary;
+	}
+	
+
+
 	public static List<Employer> getEmployers() {
 		List<Employer> EmployerList = new ArrayList();
 		

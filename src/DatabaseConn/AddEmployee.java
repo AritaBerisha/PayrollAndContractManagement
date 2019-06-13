@@ -2,16 +2,17 @@ package DatabaseConn;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
+
 
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
@@ -66,7 +67,7 @@ public class AddEmployee extends BorderPane{
 		pane.add(empEmail, 1, 5);
 		pane.add(new Label("Contact"), 0, 6);
 		pane.add(empContact, 1, 6);
-		pane.add(new Label("Address Line 1:"), 0, 7);
+		pane.add(new Label("Address:"), 0, 7);
 		pane.add(empAddress, 1, 7);
 		pane.add(new Label("Hour Work (per day):"), 0, 8);
 		pane.add(empHours, 1, 8);
@@ -86,7 +87,7 @@ public class AddEmployee extends BorderPane{
 		pane.add(empBonus, 3, 5);
 		pane.add(new Label("Deduction Payment:"), 2, 6);
 		pane.add(empDeduct, 3, 6);
-		pane.add(new Label("Deduction Payment:"), 2, 7);
+		pane.add(new Label("Salary:"), 2, 7);
 		pane.add(empSalary, 3, 7);
 		
 		Button btAdd = new Button("Add Record");
@@ -104,18 +105,27 @@ public class AddEmployee extends BorderPane{
 		pane.add(btAd1, 3, 8);
 		GridPane.setHalignment(btAdd, HPos.RIGHT);
 		
-		btAdd.setOnAction(e->AddEmp());
+
 		btAd1.setOnAction(e->clear());
 		
-		//Button btn3 = new Button("<- Back");
+		btn3.setStyle( "    -fx-padding: 3px 10px 3px 10px;\r\n" + 
+          		"    -fx-background-color: #2C3E48");
+		btn3.setTextFill(Color.rgb(186, 201, 209));
 		
 		this.setCenter(pane);
 		this.setTop(btn3);
 		this.setStyle("-fx-background-color:  #53788D");
 	
+		progressi pp = new progressi();
+		this.setBottom(pp);
 		
-		
-		
+		btAdd.setOnAction(e->{
+			AddEmp();
+			 pp.ii += 0.1; 
+             pp.pb.setProgress(pp.ii);
+             clear();
+		});
+				
 		
 		
 	}
@@ -142,6 +152,11 @@ public class AddEmployee extends BorderPane{
 			
 			preparedStatement3.executeUpdate(query3);
 			
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("Added");
+			alert.setHeaderText(null);
+			alert.setContentText("The Employer was added successfully!");
+			alert.showAndWait();
 			
 			
 		} catch (SQLException e) {
@@ -167,6 +182,6 @@ public class AddEmployee extends BorderPane{
 		empBonus.setText("");
 		empDeduct.setText("");
 		empNetto.setText("");
-		
+		empSalary.setText("");
 	}
 }

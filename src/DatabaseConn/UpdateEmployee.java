@@ -5,15 +5,17 @@ import java.sql.SQLException;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableView;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
 
 public class UpdateEmployee extends BorderPane{
 	public Button btn4 = new Button("<- Back");
 	LeftPane leftpane = new LeftPane();
 	RightPane rightpane = new RightPane();
-		
+	
 		
 	public UpdateEmployee() {
 		
@@ -31,10 +33,15 @@ public class UpdateEmployee extends BorderPane{
 		this.setCenter(main);
 	    this.setTop(btn4); 
 	    
+	    btn4.setStyle( "    -fx-padding: 3px 10px 3px 10px;\r\n" + 
+          		"    -fx-background-color: #2C3E48");
+		btn4.setTextFill(Color.rgb(186, 201, 209));
+	   
+	    
+	    
 	}
 	public void UpdateEmp() {
-		
-		String query = "Update payment set Employee_netto_salary='"+leftpane.txtSalary.getText()+"' where empId='"+leftpane.txtID.getText()+"'";
+		String query ="Update contracts set empSalary='"+leftpane.txtSalary.getText()+"' where EmpId='"+leftpane.txtID.getText()+"'";                 
 		
 		PreparedStatement preparedStatement;
 		try {
@@ -56,7 +63,7 @@ public class UpdateEmployee extends BorderPane{
 	}
 	
 	public void DeleteEmp() {
-		String query = "Delete from employees where Employee_id='"+leftpane.txtID.getText()+"'";
+		String query = "Delete from contracts where EmpId='"+leftpane.txtID.getText()+"'";
 		PreparedStatement preparedStatement;
 		try {
 			preparedStatement = DBConnection.setConnection().prepareStatement(query);

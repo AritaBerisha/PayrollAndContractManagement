@@ -29,6 +29,7 @@ public class Menus extends MenuBar {
 	public MenuItem mnW = I18N.MenuItemForKey("welcome");
 	public MenuItem mnI = I18N.MenuItemForKey("info");
 	public MenuItem mnE = I18N.MenuItemForKey("exit");
+	public MenuItem mnO = I18N.MenuItemForKey("open");
 	private Integer numSwitches = 0;
 	public Menus() {
 	 
@@ -41,15 +42,12 @@ public class Menus extends MenuBar {
 		  mnN.setAccelerator(new KeyCodeCombination(KeyCode.N,  KeyCombination.CONTROL_DOWN));
 		   //CTRL+N e hap File/New
 			 
-		  MenuItem mnO = I18N.MenuItemForKey("open");
+		   mnO = I18N.MenuItemForKey("open");
 		  fileMenu.getItems().add(mnO); 
 		  mnO.setAccelerator(new KeyCodeCombination(KeyCode.O,  KeyCombination.CONTROL_DOWN));
 		  	   //CTRL+O e hap File/Open
 
 		  
-		  MenuItem mnS = I18N.MenuItemForKey("save");
-		  fileMenu.getItems().add(mnS); 
-		  mnS.setAccelerator(new KeyCodeCombination(KeyCode.S,  KeyCombination.CONTROL_DOWN));
 		 
 		
 		  fileMenu.getItems().add(new SeparatorMenuItem());
@@ -60,10 +58,6 @@ public class Menus extends MenuBar {
 		  //Edit menu
 			
 			//alt+e e hap Edit menu
-		  Menu editMenu =I18N.menuForKey("edit");
-		  editMenu.getItems().add(I18N.MenuItemForKey("cut"));
-		  editMenu.getItems().add(I18N.MenuItemForKey("copy"));
-		  editMenu.getItems().add(I18N.MenuItemForKey("paste"));
 		  
 		
 		  //Language menu
@@ -90,12 +84,15 @@ public class Menus extends MenuBar {
 		  //mnI = new MenuItem("Help Content");
 		  helpMenu.getItems().add(mnI);
 
-		  Menu search = I18N.menuForKey("search");
-		  Menu AddMenu =I18N.menuForKey("addmenu");
+		  
+		
+		  
+		  
 	  
 	  //Main menu bar
 	 
-	  this.getMenus().addAll(fileMenu, editMenu, search, AddMenu,LangMenu, helpMenu);
+	  this.getMenus().addAll(fileMenu, LangMenu, helpMenu);
+	  
 	  this.setStyle("-fx-background-color:#53788D");
 	  
 

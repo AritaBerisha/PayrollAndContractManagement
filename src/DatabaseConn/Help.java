@@ -1,20 +1,11 @@
 package DatabaseConn;
 
-import javafx.geometry.HPos;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
+
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
-import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
@@ -29,7 +20,7 @@ public class Help {
 	    newtab.setOnSelectionChanged(e-> {if (newtab.isSelected())  
         { 
 			
-            Tab tab = new Tab("Tab_" ); 
+            Tab tab = new Tab("Help" ); 
       
     		WebView browser = new WebView();
 

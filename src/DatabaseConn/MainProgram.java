@@ -58,8 +58,13 @@ public class MainProgram {
 		mn.menu1.mnW.setOnAction(e->mainStage.setScene(sceneWelcome));
 		mn.menu1.mnI.setOnAction(e->help.about());
 		mn.menu1.mnN.setOnAction( e-> mainStage.setScene(sceneAdd));
-		mn.menu1.mnE.setOnAction(e-> Platform.exit());
+		mn.menu1.mnE.setOnAction(e->Platform.exit());
+		mn.menu1.mnO.setOnAction(e->mainStage.setScene(sceneUpdate));
 		
+		
+		
+		
+		ue.rightpane.showEmployers();
 		
 		
 		
