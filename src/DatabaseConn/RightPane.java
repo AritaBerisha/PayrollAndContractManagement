@@ -68,10 +68,7 @@ public class RightPane extends VBox {
 	searchPane.setAlignment(Pos.CENTER);
 	
 	
-	
-	btnSearch.setOnAction(e->{
-		refresh_table(EmployersTable);
-	});
+	btnSearch.setOnAction(e->refresh_table(EmployersTable));
 	
 	this.setPadding(new Insets(20));
 	this.getChildren().addAll(searchPane,EmployersTable);

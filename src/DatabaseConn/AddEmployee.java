@@ -37,7 +37,7 @@ public class AddEmployee extends BorderPane{
 	TextField empBonus = new TextField();
 	TextField empDeduct = new TextField();
 	TextField empSalary = new TextField();
-	
+	Button btAdd = new Button("Add Record");
 	
 	public AddEmployee() {
 		GridPane pane = new GridPane();
@@ -90,7 +90,7 @@ public class AddEmployee extends BorderPane{
 		pane.add(new Label("Salary:"), 2, 7);
 		pane.add(empSalary, 3, 7);
 		
-		Button btAdd = new Button("Add Record");
+		
 		btAdd.setTextFill(Color.rgb(186, 201, 209));
 	       btAdd.setStyle("-fx-background-radius: 30, 30, 29, 28;\r\n" + 
 	          		"    -fx-padding: 3px 10px 3px 10px;\r\n" + 
@@ -119,11 +119,13 @@ public class AddEmployee extends BorderPane{
 		progressi pp = new progressi();
 		this.setBottom(pp);
 		
+		
 		btAdd.setOnAction(e->{
 			AddEmp();
 			 pp.ii += 0.1; 
              pp.pb.setProgress(pp.ii);
              clear();
+             
 		});
 				
 		

@@ -12,7 +12,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 
 public class Welcome extends BorderPane{
 	public Button btn3 = new Button("<- Back");
@@ -28,10 +30,17 @@ public class Welcome extends BorderPane{
 	        usernameIconIV.setFitWidth(500);
 	        usernameIconIV.setFitHeight(200);
 		
-	   
+	   Text text = new Text();
+	   text.setText("Welcome to this company's payroll and contract managment program!");
+	  
+	   text.setFill(Color.rgb(186, 201, 209));
 
+	   VBox vbox = new VBox();
+	   vbox.getChildren().addAll(usernameIconIV,text);
+	   vbox.setSpacing(30);
+	   vbox.setAlignment(Pos.CENTER);
 		
-		pane.getChildren().add(usernameIconIV);
+		pane.getChildren().add(vbox);
 
 		
 		

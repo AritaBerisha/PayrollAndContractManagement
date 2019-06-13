@@ -214,11 +214,7 @@ public class Login extends Application {
     			ResultSet result = preparedStatement.executeQuery();
     			
     			if(result.next()) {
-    				Alert alert = new Alert(AlertType.INFORMATION);
-    				alert.setTitle("Login result");
-    				alert.setHeaderText(null);
-    				alert.setContentText("You are logged in!");
-    				alert.showAndWait();
+    				
     				
     				mainStage.hide();
     				MainProgram.createMainStage();
