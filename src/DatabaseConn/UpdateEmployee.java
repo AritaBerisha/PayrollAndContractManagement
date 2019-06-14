@@ -28,8 +28,14 @@ public class UpdateEmployee extends BorderPane{
 		rightpane.prefWidthProperty().bind(main.widthProperty().subtract(main.widthProperty().divide(4)));
 		//Button btn4 = new Button("<- Back");
 		
-		leftpane.btnUpdate.setOnAction(e->UpdateEmp());
-		leftpane.btnDelete.setOnAction(e->DeleteEmp());
+		leftpane.btnUpdate.setOnAction(e->{
+			UpdateEmp();
+			rightpane.refresh_table(rightpane.EmployersTable);
+		});
+		leftpane.btnDelete.setOnAction(e->{
+			DeleteEmp();
+			rightpane.refresh_table(rightpane.EmployersTable);
+		});
 		this.setCenter(main);
 	    this.setTop(btn4); 
 	    

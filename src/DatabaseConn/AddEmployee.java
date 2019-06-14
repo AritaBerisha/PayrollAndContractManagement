@@ -119,12 +119,14 @@ public class AddEmployee extends BorderPane{
 		progressi pp = new progressi();
 		this.setBottom(pp);
 		
+		RightPane rightpane = new RightPane();
 		
 		btAdd.setOnAction(e->{
 			AddEmp();
 			 pp.ii += 0.1; 
              pp.pb.setProgress(pp.ii);
              clear();
+             rightpane.refresh_table(rightpane.EmployersTable);
              
 		});
 				

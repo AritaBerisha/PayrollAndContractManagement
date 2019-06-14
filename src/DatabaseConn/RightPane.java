@@ -77,7 +77,7 @@ public class RightPane extends VBox {
 	this.btnSearch.setStyle("-fx-background-radius: 30, 30, 29, 28;\r\n" + 
       		"    -fx-padding: 3px 10px 3px 10px;\r\n" + 
       		"    -fx-background-color: #2C3E48");
-	showEmployers();
+	
 	
 	}
 	public void showEmployers() {
