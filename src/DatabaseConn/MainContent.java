@@ -69,7 +69,7 @@ public class MainContent extends BorderPane {
 		  vbox2.getChildren().addAll(AImageView,btn);
 		 
 		  
-		  Button btn3 = new Button("<- Back");
+		  Button btn3 = I18N.buttonForKey("backbtn");
 		  
 		hbox2.getChildren().addAll(vbox1,vbox2);
 		hbox2.setSpacing(10);

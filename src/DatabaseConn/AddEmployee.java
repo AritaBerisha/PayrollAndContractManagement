@@ -2,7 +2,7 @@ package DatabaseConn;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
+import java.util.Locale;
 
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -37,7 +37,8 @@ public class AddEmployee extends BorderPane{
 	TextField empBonus = new TextField();
 	TextField empDeduct = new TextField();
 	TextField empSalary = new TextField();
-	Button btAdd = new Button("Add Record");
+	Button btAdd = I18N.buttonForKey("addrecord");	
+	private Integer numSwitches = 0;
 	
 	public AddEmployee() {
 		GridPane pane = new GridPane();
@@ -55,39 +56,39 @@ public class AddEmployee extends BorderPane{
 		pane.getChildren().add(label);
 		
 		
-		pane.add(new Label("Employee ID:"), 0, 1);
+		pane.add(I18N.getLabel("employeeID"), 0, 1);
 		pane.add(empId, 1, 1);
-		pane.add(new Label("First Name:"), 0, 2);
+		pane.add(I18N.getLabel("firstname"), 0, 2);
 		pane.add(empName, 1, 2);
-		pane.add(new Label("Surname:"), 0, 3);
+		pane.add(I18N.getLabel("lastname"), 0, 3);
 		pane.add(empSurname, 1, 3);
-		pane.add(new Label("Date Of Birth:"), 0, 4);
+		pane.add(I18N.getLabel("dtb"), 0, 4);
 		pane.add(empBirth, 1, 4);
-		pane.add(new Label("Email"), 0, 5);
+		pane.add(I18N.getLabel("email"), 0, 5);
 		pane.add(empEmail, 1, 5);
-		pane.add(new Label("Contact"), 0, 6);
+		pane.add(I18N.getLabel("contact"), 0, 6);
 		pane.add(empContact, 1, 6);
-		pane.add(new Label("Address:"), 0, 7);
+		pane.add(I18N.getLabel("address"), 0, 7);
 		pane.add(empAddress, 1, 7);
-		pane.add(new Label("Hour Work (per day):"), 0, 8);
+		pane.add(I18N.getLabel("hourwork"), 0, 8);
 		pane.add(empHours, 1, 8);
-		pane.add(new Label("Contact begin date:"), 0, 9);
+		pane.add(I18N.getLabel("contractbgndate"), 0, 9);
 		pane.add(empIdConBeg, 1, 9);
-		pane.add(new Label("Contract due date:"), 0, 10);
+		pane.add(I18N.getLabel("contractduedate"), 0, 10);
 		pane.add(empIdConEnd, 1, 10);
-		pane.add(new Label("Department:"), 2, 1);
+		pane.add(I18N.getLabel("department"), 2, 1);
 		pane.add(empDep, 3, 1);
-		pane.add(new Label("Job Title:"), 2, 2);
+		pane.add(I18N.getLabel("jobtitle"), 2, 2);
 		pane.add(empJob, 3, 2);
-		pane.add(new Label("Status:"), 2, 3);
+		pane.add(I18N.getLabel("status"), 2, 3);
 		pane.add(activeChb, 3, 3);
-		pane.add(new Label("Netto Salary:"), 2, 4);
+		pane.add(I18N.getLabel("netto"), 2, 4);
 		pane.add(empNetto, 3, 4);
-		pane.add(new Label("Bonus Payment:"), 2, 5);
+		pane.add(I18N.getLabel("bonus"), 2, 5);
 		pane.add(empBonus, 3, 5);
-		pane.add(new Label("Deduction Payment:"), 2, 6);
+		pane.add(I18N.getLabel("deduction"), 2, 6);
 		pane.add(empDeduct, 3, 6);
-		pane.add(new Label("Salary:"), 2, 7);
+		pane.add(I18N.getLabel("salary"), 2, 7);
 		pane.add(empSalary, 3, 7);
 		
 		
@@ -97,7 +98,7 @@ public class AddEmployee extends BorderPane{
 	          		"    -fx-background-color: #2C3E48");
 		pane.add(btAdd, 2, 8);
 		GridPane.setHalignment(btAdd, HPos.RIGHT);
-		Button btAd1 = new Button("Clear");
+		Button btAd1 = I18N.buttonForKey("clear");
 		btAd1.setTextFill(Color.rgb(186, 201, 209));
 	       btAd1.setStyle("-fx-background-radius: 30, 30, 29, 28;\r\n" + 
 	          		"    -fx-padding: 3px 10px 3px 10px;\r\n" + 
@@ -187,5 +188,9 @@ public class AddEmployee extends BorderPane{
 		empDeduct.setText("");
 		empNetto.setText("");
 		empSalary.setText("");
+	}
+	public void switchLanguage(Locale locale) {
+		numSwitches++;
+		I18N.setLocale(locale);
 	}
 }

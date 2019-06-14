@@ -17,11 +17,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.RadioMenuItem;
+import javafx.scene.control.TableColumn;
 
 
 public class I18N {
 
 	public static ObjectProperty<Locale> locale;
+	
 	
 	static {
 		locale = new SimpleObjectProperty<>(getDefaultLocale());
@@ -84,5 +86,10 @@ public class I18N {
 		return menuitem;
 	}
 
+	public static TableColumn tableColumn(String key, Object... args){
+		TableColumn tablecolumn = new TableColumn();
+		tablecolumn.textProperty().bind(createStringBinding(key,args));
+		return tablecolumn;
+	}
 	
 }

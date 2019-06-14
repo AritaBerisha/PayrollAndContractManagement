@@ -12,7 +12,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 
 public class UpdateEmployee extends BorderPane{
-	public Button btn4 = new Button("<- Back");
+	public Button btn4 = I18N.buttonForKey("backbtn");
 	LeftPane leftpane = new LeftPane();
 	RightPane rightpane = new RightPane();
 	

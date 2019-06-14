@@ -1,6 +1,7 @@
 package DatabaseConn;
 
 import java.util.List;
+import java.util.Locale;
 
 import com.sun.javafx.scene.control.skin.TableViewSkinBase;
 
@@ -23,9 +24,10 @@ public class RightPane extends VBox {
 	HBox searchPane = new HBox();
 	
 	
-	Button btnSearch = new Button("Refresh!");
+	Button btnSearch = I18N.buttonForKey("searchbtn");
 	
 	Label label = new Label("Look up the contracts and decide!");
+	private Integer numSwitches = 0;
 
 	TableView EmployersTable= new TableView();
 	
@@ -33,7 +35,7 @@ public class RightPane extends VBox {
 		
 		
 		// Employers table
-				TableColumn<String, Employer> column1 = new TableColumn<>("Employer ID");
+		       TableColumn<String, Employer> column1 = new TableColumn<>("Employer Id");
 				column1.setCellValueFactory(new PropertyValueFactory("EmpId"));
 				column1.setPrefWidth(136);
 				
@@ -110,5 +112,9 @@ public class RightPane extends VBox {
 		
 		table.setItems(EmployerList);
 		
+	}
+	public void switchLanguage(Locale locale) {
+		numSwitches++;
+		I18N.setLocale(locale);
 	}
 }
